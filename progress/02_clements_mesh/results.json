@@ -1,0 +1,49 @@
+{
+  "python": "3.12.4",
+  "numpy": "2.4.1",
+  "seed": 20261026,
+  "tolerance": 1e-10,
+  "special_cases": [
+    "identity",
+    "reversal",
+    "diagonal_phase",
+    "fourier"
+  ],
+  "global_phase_alignment": false,
+  "sizes": [
+    {
+      "size": 2,
+      "mzi_count": 1,
+      "random_samples": 100,
+      "special_samples": 4,
+      "max_matrix_relative_error": 8.815980079313617e-16,
+      "max_vector_relative_error": 1.1790604252171042e-15,
+      "max_power_relative_error": 5.45226630926571e-16,
+      "max_unitarity_absolute_error": 4.496917212498577e-16,
+      "passed": true
+    },
+    {
+      "size": 4,
+      "mzi_count": 6,
+      "random_samples": 100,
+      "special_samples": 4,
+      "max_matrix_relative_error": 9.454672636454332e-16,
+      "max_vector_relative_error": 1.1388720849364726e-15,
+      "max_power_relative_error": 6.465690334790642e-16,
+      "max_unitarity_absolute_error": 7.473578513647951e-16,
+      "passed": true
+    },
+    {
+      "size": 8,
+      "mzi_count": 28,
+      "random_samples": 100,
+      "special_samples": 4,
+      "max_matrix_relative_error": 1.4623100344346365e-15,
+      "max_vector_relative_error": 1.7310642755316266e-15,
+      "max_power_relative_error": 6.133062927648279e-16,
+      "max_unitarity_absolute_error": 1.498913640284767e-15,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
