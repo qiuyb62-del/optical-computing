@@ -1,0 +1,66 @@
+{
+  "python": "3.12.4",
+  "numpy": "2.4.1",
+  "seed": 20261102,
+  "tolerance": 1e-10,
+  "near_zero_ratio": 1e-12,
+  "reference": "NumPy W @ x; no global phase alignment",
+  "scale_convention": "s=max(1,sigma_max); t=sigma/s; y_optical=(W/s)x; y=s*y_optical",
+  "special_cases": [
+    "zero",
+    "identity",
+    "signed_attenuation",
+    "complex_gain",
+    "rank_one",
+    "rank_deficient",
+    "ill_conditioned"
+  ],
+  "sizes": [
+    {
+      "size": 2,
+      "mzi_count_total": 2,
+      "random_matrices": 100,
+      "special_matrices": 7,
+      "matrix_count": 107,
+      "vector_count": 428,
+      "max_matrix_relative_error": 1.2590151946757482e-15,
+      "max_vector_relative_error": 1.3778080709596195e-15,
+      "max_optical_vector_relative_error": 1.4010475725753946e-15,
+      "near_zero_vector_count": 112,
+      "max_near_zero_vector_absolute_error": 6.123233995736766e-17,
+      "power_checks_passed": true,
+      "passed": true
+    },
+    {
+      "size": 4,
+      "mzi_count_total": 12,
+      "random_matrices": 100,
+      "special_matrices": 7,
+      "matrix_count": 107,
+      "vector_count": 642,
+      "max_matrix_relative_error": 3.1841702625649968e-15,
+      "max_vector_relative_error": 5.43638722127471e-15,
+      "max_optical_vector_relative_error": 5.412425129155828e-15,
+      "near_zero_vector_count": 114,
+      "max_near_zero_vector_absolute_error": 2.2911043711093785e-16,
+      "power_checks_passed": true,
+      "passed": true
+    },
+    {
+      "size": 8,
+      "mzi_count_total": 56,
+      "random_matrices": 100,
+      "special_matrices": 7,
+      "matrix_count": 107,
+      "vector_count": 1070,
+      "max_matrix_relative_error": 4.239711975243478e-15,
+      "max_vector_relative_error": 9.248274495377403e-15,
+      "max_optical_vector_relative_error": 9.248274495377403e-15,
+      "near_zero_vector_count": 119,
+      "max_near_zero_vector_absolute_error": 7.245108169873312e-16,
+      "power_checks_passed": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
