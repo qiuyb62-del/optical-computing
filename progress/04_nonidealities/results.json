@@ -1,0 +1,2253 @@
+{
+  "model": "passive_physical_phase_v1",
+  "python": "3.12.4",
+  "numpy": "2.4.1",
+  "seed": 20261109,
+  "samples_per_size": 20,
+  "realizations_per_matrix": 30,
+  "sizes": [
+    2,
+    4,
+    8
+  ],
+  "phase_noise": "independent static physical control offsets, added after quantization",
+  "paired_conditions": true,
+  "vector_inputs": "N basis inputs plus two independent random complex vectors",
+  "ideal_tolerance": 1e-10,
+  "percentiles": "empirical 5th/95th percentiles, not confidence intervals",
+  "nonideal_interpretation": "Exceeding ideal numerical tolerance is expected; validation checks passivity and ideal recovery.",
+  "special_ideal_checks": [
+    {
+      "size": 2,
+      "cases": 7,
+      "max_matrix_relative_error": 9.362917956023227e-16,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "size": 4,
+      "cases": 7,
+      "max_matrix_relative_error": 2.6949917081906715e-15,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "size": 8,
+      "cases": 7,
+      "max_matrix_relative_error": 5.260806147816398e-15,
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "conditions": [
+    {
+      "size": 2,
+      "condition": "ideal",
+      "factor": "baseline",
+      "setting": 0.0,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 3.7448846703491323e-16,
+        "median": 8.326330743668804e-16,
+        "p95": 1.405356103024273e-15,
+        "max": 1.5494539784491326e-15
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 3.413982098993163e-16,
+        "median": 8.013554773969482e-16,
+        "p95": 1.5513613131635892e-15,
+        "max": 1.7229371463141416e-15
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.00486680214257183,
+        "median": 0.34762349692536243,
+        "p95": 0.9691461715681979,
+        "max": 0.9906142387320084
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 0.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 10,
+        "trial": 0,
+        "device_seed": 15373455907822950256,
+        "matrix_relative_error": 1.5494539784491326e-15
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "phase_0.001",
+      "factor": "phase",
+      "setting": 0.001,
+      "config": {
+        "phase_std_rad": 0.001,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.0008264306328426819,
+        "median": 0.002013771613239449,
+        "p95": 0.004403364659382141,
+        "max": 0.006781913146458661
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.0006615163238223551,
+        "median": 0.0020549234997557157,
+        "p95": 0.0046594959712750045,
+        "max": 0.00893004412821473
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004863093303936476,
+        "median": 0.34767946650502335,
+        "p95": 0.9695383573475581,
+        "max": 0.9908090262863518
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 1,
+        "trial": 5,
+        "device_seed": 6208670461589786576,
+        "matrix_relative_error": 0.006781913146458661
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "phase_0.01",
+      "factor": "phase",
+      "setting": 0.01,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.00829453276942341,
+        "median": 0.020135638138582185,
+        "p95": 0.044029347742882516,
+        "max": 0.06785194549876204
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.006617589037144766,
+        "median": 0.020555234508304286,
+        "p95": 0.046560652794699356,
+        "max": 0.08929770670165547
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004830043078286038,
+        "median": 0.3482405264482781,
+        "p95": 0.9721204909205851,
+        "max": 0.9924507049309255
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 1,
+        "trial": 5,
+        "device_seed": 6208670461589786576,
+        "matrix_relative_error": 0.06785194549876204
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "phase_0.03",
+      "factor": "phase",
+      "setting": 0.03,
+      "config": {
+        "phase_std_rad": 0.03,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.024908363099140112,
+        "median": 0.060384298040448176,
+        "p95": 0.13199000423654256,
+        "max": 0.20351758092966668
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.01985545258188413,
+        "median": 0.06172258000523625,
+        "p95": 0.1392264336868979,
+        "max": 0.26784209444565915
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004759099784528834,
+        "median": 0.35156375599722983,
+        "p95": 0.9717942179186028,
+        "max": 0.9953784968800581
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 1,
+        "trial": 5,
+        "device_seed": 6208670461589786576,
+        "matrix_relative_error": 0.20351758092966668
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "phase_0.1",
+      "factor": "phase",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.1,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.08303408915114148,
+        "median": 0.2007010117823022,
+        "p95": 0.43333673508075027,
+        "max": 0.6685992872119616
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.06647865384461775,
+        "median": 0.2046481525570386,
+        "p95": 0.4581603821115438,
+        "max": 0.8910250806462204
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004363773503704996,
+        "median": 0.3607801295986436,
+        "p95": 0.9703773864719841,
+        "max": 0.9996848816855587
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 1,
+        "trial": 5,
+        "device_seed": 6208670461589786576,
+        "matrix_relative_error": 0.6685992872119616
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "loss_0.1",
+      "factor": "loss",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.022762779044188882,
+        "median": 0.02276277904418906,
+        "p95": 0.02276277904418928,
+        "max": 0.022762779044189302
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.02276277904418872,
+        "median": 0.02276277904418906,
+        "p95": 0.022762779044189347,
+        "max": 0.022762779044189448
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004647759963789337,
+        "median": 0.3319778622905666,
+        "p95": 0.9255274086186879,
+        "max": 0.9460292535963368
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 18,
+        "trial": 0,
+        "device_seed": 3397687052388387715,
+        "matrix_relative_error": 0.022762779044189302
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "loss_0.3",
+      "factor": "loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.3,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.06674569920300862,
+        "median": 0.06674569920300877,
+        "p95": 0.06674569920300893,
+        "max": 0.06674569920300896
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.06674569920300844,
+        "median": 0.06674569920300878,
+        "p95": 0.06674569920300903,
+        "max": 0.06674569920300917
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.0042388074657003045,
+        "median": 0.30276740883520026,
+        "p95": 0.8440910287812292,
+        "max": 0.8627889336276403
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 17,
+        "trial": 0,
+        "device_seed": 9982667161596519848,
+        "matrix_relative_error": 0.06674569920300896
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "loss_0.5",
+      "factor": "loss",
+      "setting": 0.5,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.5,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.10874906186625406,
+        "median": 0.10874906186625424,
+        "p95": 0.10874906186625438,
+        "max": 0.1087490618662544
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.10874906186625385,
+        "median": 0.10874906186625424,
+        "p95": 0.10874906186625448,
+        "max": 0.10874906186625452
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.003865838354661434,
+        "median": 0.2761271586614049,
+        "p95": 0.7698201676515626,
+        "max": 0.7868728595447345
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 19,
+        "trial": 0,
+        "device_seed": 6305191264379334620,
+        "matrix_relative_error": 0.1087490618662544
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "bits_4",
+      "factor": "quantization",
+      "setting": 4,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 4,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.07496827491737722,
+        "median": 0.21098549841136238,
+        "p95": 0.39067634411290597,
+        "max": 0.39717544368994556
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.06838531578012484,
+        "median": 0.2123817475110246,
+        "p95": 0.39756361944480784,
+        "max": 0.713181868455754
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.00474958594988193,
+        "median": 0.3841266330859665,
+        "p95": 0.9620565779589909,
+        "max": 0.9800139640766158
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 2792127321842887836,
+        "matrix_relative_error": 0.39717544368994556
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "bits_6",
+      "factor": "quantization",
+      "setting": 6,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 6,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.015529837109021201,
+        "median": 0.053035367205672104,
+        "p95": 0.10363839694055328,
+        "max": 0.10949193321937935
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.015349631837547222,
+        "median": 0.054136294997858075,
+        "p95": 0.119393958834861,
+        "max": 0.14159786802656416
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004901332702378979,
+        "median": 0.35275982291542585,
+        "p95": 0.9628252837362574,
+        "max": 0.9904210000957401
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 9,
+        "trial": 0,
+        "device_seed": 1616924163189516682,
+        "matrix_relative_error": 0.10949193321937935
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "bits_8",
+      "factor": "quantization",
+      "setting": 8,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 8,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.005648283574584207,
+        "median": 0.014391032558866278,
+        "p95": 0.025974221124468268,
+        "max": 0.04370816963365714
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.005265115613046694,
+        "median": 0.014296489847552898,
+        "p95": 0.04013116999470685,
+        "max": 0.04683582325494988
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004859374651931329,
+        "median": 0.3474174822912245,
+        "p95": 0.9670794787706138,
+        "max": 0.9903298307499901
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 2792127321842887836,
+        "matrix_relative_error": 0.04370816963365714
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "coupler_0.49",
+      "factor": "coupler",
+      "setting": 0.49,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.011849795523544863,
+        "median": 0.021811509141790336,
+        "p95": 0.029578883052117196,
+        "max": 0.02987512420114031
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.006852255070673648,
+        "median": 0.020241971598438806,
+        "p95": 0.04638953440078345,
+        "max": 0.11635155240788823
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004870469025118216,
+        "median": 0.3475296377046719,
+        "p95": 0.9687801397621855,
+        "max": 0.9902947239836433
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 11438263093426124723,
+        "matrix_relative_error": 0.02987512420114031
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "coupler_0.47",
+      "factor": "coupler",
+      "setting": 0.47,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.47,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.035581399509181245,
+        "median": 0.06546284823787957,
+        "p95": 0.08873986158520157,
+        "max": 0.08962654892866045
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.020615184736583945,
+        "median": 0.060726116309532965,
+        "p95": 0.1391706909256181,
+        "max": 0.34905752362906706
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004886487500059299,
+        "median": 0.3467787639391502,
+        "p95": 0.9658518853140889,
+        "max": 0.9896535641603851
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 11438263093426124723,
+        "matrix_relative_error": 0.08962654892866045
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "coupler_0.45",
+      "factor": "coupler",
+      "setting": 0.45,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.45,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.059372396548963036,
+        "median": 0.10921763334206784,
+        "p95": 0.14791052855443693,
+        "max": 0.14938152150327186
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.034553453556064075,
+        "median": 0.10121275710649646,
+        "p95": 0.23195814400748146,
+        "max": 0.5817721401221678
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004914067487702385,
+        "median": 0.3452770164081068,
+        "p95": 0.9599330139477272,
+        "max": 0.9890100491219751
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 11438263093426124723,
+        "matrix_relative_error": 0.14938152150327186
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "upper_arm_loss_0.3",
+      "factor": "arm_loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.3
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.03615560270736381,
+        "median": 0.04150310496850845,
+        "p95": 0.046608024924512624,
+        "max": 0.04680967876587792
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.0293379136988253,
+        "median": 0.04186718489577195,
+        "p95": 0.07293671796283917,
+        "max": 0.1294705684608931
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.00455642921188225,
+        "median": 0.32487022451451375,
+        "p95": 0.905146674988708,
+        "max": 0.9235788878096568
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 12,
+        "trial": 0,
+        "device_seed": 7849367442415391124,
+        "matrix_relative_error": 0.04680967876587792
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 2,
+      "condition": "combined",
+      "factor": "combined",
+      "setting": null,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": 8,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 2400,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.02763732680281638,
+        "median": 0.03937574499407309,
+        "p95": 0.06408303750439233,
+        "max": 0.08574641562404935
+      },
+      "vector_relative_error": {
+        "count": 2400,
+        "p05": 0.023983820284807646,
+        "median": 0.0387690076949345,
+        "p95": 0.07861364040662955,
+        "max": 0.15338429735865805
+      },
+      "power_throughput": {
+        "count": 2400,
+        "p05": 0.004609197678789525,
+        "median": 0.33226210686195357,
+        "p95": 0.926946946048536,
+        "max": 0.9472395282018048
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 5,
+        "trial": 0,
+        "device_seed": 11064195002945466168,
+        "matrix_relative_error": 0.08574641562404935
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "ideal",
+      "factor": "baseline",
+      "setting": 0.0,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 1.7273838755261128e-15,
+        "median": 2.1513234660696668e-15,
+        "p95": 3.732423821263875e-15,
+        "max": 4.401918946054385e-15
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 1.4779679924258962e-15,
+        "median": 2.2237075296861726e-15,
+        "p95": 4.685958260953952e-15,
+        "max": 1.0361306292064265e-14
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.02388294801092536,
+        "median": 0.2678717833672357,
+        "p95": 0.6931539119469718,
+        "max": 0.8103384960420333
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 0.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 19,
+        "trial": 0,
+        "device_seed": 1521216704815237180,
+        "matrix_relative_error": 4.401918946054385e-15
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "phase_0.001",
+      "factor": "phase",
+      "setting": 0.001,
+      "config": {
+        "phase_std_rad": 0.001,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.0020963143811503233,
+        "median": 0.0034663666855652008,
+        "p95": 0.005895889192230026,
+        "max": 0.009552496919763852
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.0016145215137822317,
+        "median": 0.0033711921588425817,
+        "p95": 0.006298309005523114,
+        "max": 0.011139207888668779
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.023782225282108126,
+        "median": 0.2679183744864721,
+        "p95": 0.6934826563187019,
+        "max": 0.8111549168434868
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 17,
+        "device_seed": 6173136197369768987,
+        "matrix_relative_error": 0.009552496919763852
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "phase_0.01",
+      "factor": "phase",
+      "setting": 0.01,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.020971089867196105,
+        "median": 0.034663571270471635,
+        "p95": 0.058955037929108924,
+        "max": 0.09546266498634014
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.01619332449649591,
+        "median": 0.03372446538406271,
+        "p95": 0.06296638663647826,
+        "max": 0.11144527150306885
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.02288874109705356,
+        "median": 0.2680640468860156,
+        "p95": 0.6963900410123908,
+        "max": 0.8183554612058983
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 17,
+        "device_seed": 6173136197369768987,
+        "matrix_relative_error": 0.09546266498634014
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "phase_0.03",
+      "factor": "phase",
+      "setting": 0.03,
+      "config": {
+        "phase_std_rad": 0.03,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.06295030003762694,
+        "median": 0.10420271738238951,
+        "p95": 0.1764152304716108,
+        "max": 0.2850034443479206
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.048641900253903636,
+        "median": 0.10098605577061498,
+        "p95": 0.18892209647950717,
+        "max": 0.3334065659430732
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.02268982042287739,
+        "median": 0.27109353343179377,
+        "p95": 0.7060346845310156,
+        "max": 0.8333842988652237
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 17,
+        "device_seed": 6173136197369768987,
+        "matrix_relative_error": 0.2850034443479206
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "phase_0.1",
+      "factor": "phase",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.1,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.208363373959027,
+        "median": 0.3445123438288403,
+        "p95": 0.5720204201462092,
+        "max": 0.9002315271283324
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.16174741001898307,
+        "median": 0.333786364016187,
+        "p95": 0.6170208954091405,
+        "max": 1.0548574961002442
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.02334527922367846,
+        "median": 0.2741526469211777,
+        "p95": 0.7235165931835769,
+        "max": 0.8746811459738303
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 17,
+        "device_seed": 6173136197369768987,
+        "matrix_relative_error": 0.9002315271283324
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "loss_0.1",
+      "factor": "loss",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.06261249671843931,
+        "median": 0.06604987911324237,
+        "p95": 0.06839347144136579,
+        "max": 0.07063195462227298
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.0571441821575318,
+        "median": 0.06684256823712593,
+        "p95": 0.0745708354896878,
+        "max": 0.08204919449651774
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.020769316434047072,
+        "median": 0.23385339136562766,
+        "p95": 0.6015387390692406,
+        "max": 0.7054009836598721
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 13,
+        "trial": 0,
+        "device_seed": 4591522487775115323,
+        "matrix_relative_error": 0.07063195462227298
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "loss_0.3",
+      "factor": "loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.3,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.17586042587502257,
+        "median": 0.18518192020864369,
+        "p95": 0.191324394735108,
+        "max": 0.19710575547399936
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.16157108236277667,
+        "median": 0.1872540006053608,
+        "p95": 0.20732704649619577,
+        "max": 0.22643637210320874
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.015785764811731808,
+        "median": 0.17896316084902336,
+        "p95": 0.4600377233549364,
+        "max": 0.5591273186867196
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 13,
+        "trial": 0,
+        "device_seed": 4591522487775115323,
+        "matrix_relative_error": 0.19710575547399936
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "loss_0.5",
+      "factor": "loss",
+      "setting": 0.5,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.5,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.27498303399575885,
+        "median": 0.2889263507773131,
+        "p95": 0.29787205495336583,
+        "max": 0.30616663811107053
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.2541440368377184,
+        "median": 0.29193807213233613,
+        "p95": 0.32091012030718247,
+        "max": 0.3480379024033919
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.012333363355061251,
+        "median": 0.13746846747978192,
+        "p95": 0.35700399844667574,
+        "max": 0.44362450713798257
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 13,
+        "trial": 0,
+        "device_seed": 4591522487775115323,
+        "matrix_relative_error": 0.30616663811107053
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "bits_4",
+      "factor": "quantization",
+      "setting": 4,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 4,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.18369718167329588,
+        "median": 0.3326732346399264,
+        "p95": 0.565647142033738,
+        "max": 0.6900868869351079
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.15276654745928508,
+        "median": 0.33767558178921864,
+        "p95": 0.7072732159483187,
+        "max": 0.8735775734974696
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.023275396271496312,
+        "median": 0.2716055563959038,
+        "p95": 0.7294965103183427,
+        "max": 0.8479505741952174
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 3,
+        "trial": 0,
+        "device_seed": 11676663896120758012,
+        "matrix_relative_error": 0.6900868869351079
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "bits_6",
+      "factor": "quantization",
+      "setting": 6,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 6,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.05585924806631801,
+        "median": 0.09242064601876235,
+        "p95": 0.14032248117747398,
+        "max": 0.14498563387641947
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.0403971372038192,
+        "median": 0.08564424534948974,
+        "p95": 0.1639785559682055,
+        "max": 0.21933054942708277
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.02461861033562414,
+        "median": 0.2633699346011143,
+        "p95": 0.6989180129527887,
+        "max": 0.8083512608104493
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 5,
+        "trial": 0,
+        "device_seed": 17529739928637105280,
+        "matrix_relative_error": 0.14498563387641947
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "bits_8",
+      "factor": "quantization",
+      "setting": 8,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 8,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.01295680406990681,
+        "median": 0.024314201110259438,
+        "p95": 0.035439231953948186,
+        "max": 0.03763389178326969
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.009030431241879867,
+        "median": 0.022660143207640517,
+        "p95": 0.042127083206745145,
+        "max": 0.07390943310023282
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.023868629698674544,
+        "median": 0.26804405840897577,
+        "p95": 0.6960118203453831,
+        "max": 0.80714301790515
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 13,
+        "trial": 0,
+        "device_seed": 4591522487775115323,
+        "matrix_relative_error": 0.03763389178326969
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "coupler_0.49",
+      "factor": "coupler",
+      "setting": 0.49,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.029642723740167642,
+        "median": 0.0383279941782202,
+        "p95": 0.053647327909503,
+        "max": 0.055274727133155774
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.02240965191955834,
+        "median": 0.03849838641085376,
+        "p95": 0.06239576562967934,
+        "max": 0.10386034911448626
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.024470282940600486,
+        "median": 0.26719017990072924,
+        "p95": 0.6920392785437192,
+        "max": 0.8098441206348016
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 6678501383139863278,
+        "matrix_relative_error": 0.055274727133155774
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "coupler_0.47",
+      "factor": "coupler",
+      "setting": 0.47,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.47,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.08888243588878512,
+        "median": 0.11498044634986856,
+        "p95": 0.1611384548919824,
+        "max": 0.16598085015328182
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.06723832687126377,
+        "median": 0.11551868603991558,
+        "p95": 0.18695727713786647,
+        "max": 0.31033269368250593
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.026131755973868034,
+        "median": 0.26581365890145897,
+        "p95": 0.6958373099856079,
+        "max": 0.8058952574988543
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 6678501383139863278,
+        "matrix_relative_error": 0.16598085015328182
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "coupler_0.45",
+      "factor": "coupler",
+      "setting": 0.45,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.45,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.14798557356758124,
+        "median": 0.19158413050109468,
+        "p95": 0.26854170821402557,
+        "max": 0.2764816399167163
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.11207544865709695,
+        "median": 0.19268539122666334,
+        "p95": 0.3108285813291514,
+        "max": 0.5144243080813728
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.024841236044123742,
+        "median": 0.26200193988195786,
+        "p95": 0.6974470870921287,
+        "max": 0.7980302504273075
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 6678501383139863278,
+        "matrix_relative_error": 0.2764816399167163
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "upper_arm_loss_0.3",
+      "factor": "arm_loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.3
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.09921060113529116,
+        "median": 0.10434462876258802,
+        "p95": 0.1095860154369191,
+        "max": 0.11270461799411607
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.08071916674824955,
+        "median": 0.10477092761547446,
+        "p95": 0.12805373810932288,
+        "max": 0.15268884615566186
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.020780749906233627,
+        "median": 0.22279491754070518,
+        "p95": 0.5565793317023435,
+        "max": 0.6665249880167678
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 0,
+        "device_seed": 15985611254724869938,
+        "matrix_relative_error": 0.11270461799411607
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 4,
+      "condition": "combined",
+      "factor": "combined",
+      "setting": null,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": 8,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 3600,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.07542682988822651,
+        "median": 0.08680294100338384,
+        "p95": 0.1081768157059803,
+        "max": 0.14346642394654205
+      },
+      "vector_relative_error": {
+        "count": 3600,
+        "p05": 0.06668831174566976,
+        "median": 0.0868514010491485,
+        "p95": 0.12106063563007351,
+        "max": 0.17750497365170345
+      },
+      "power_throughput": {
+        "count": 3600,
+        "p05": 0.020447839611945354,
+        "median": 0.2335384928909991,
+        "p95": 0.6036181976740238,
+        "max": 0.7105891228854953
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 6,
+        "trial": 17,
+        "device_seed": 6173136197369768987,
+        "matrix_relative_error": 0.14346642394654205
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "ideal",
+      "factor": "baseline",
+      "setting": 0.0,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 3.5204883033269874e-15,
+        "median": 4.6838929349410925e-15,
+        "p95": 5.725797052736052e-15,
+        "max": 5.9758904666522756e-15
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 3.3294652359122763e-15,
+        "median": 4.575961660510618e-15,
+        "p95": 6.123317866682102e-15,
+        "max": 8.396605161801761e-15
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.0529441137778103,
+        "median": 0.24785427797349732,
+        "p95": 0.5342067814520662,
+        "max": 0.7212888981563783
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 0.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 11,
+        "trial": 0,
+        "device_seed": 11633130525965890001,
+        "matrix_relative_error": 5.9758904666522756e-15
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "phase_0.001",
+      "factor": "phase",
+      "setting": 0.001,
+      "config": {
+        "phase_std_rad": 0.001,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.003884978241098983,
+        "median": 0.005245654862900658,
+        "p95": 0.007593142398749981,
+        "max": 0.009402933518275198
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.003004883112276159,
+        "median": 0.005051618184845752,
+        "p95": 0.008494751490173974,
+        "max": 0.014339944872551741
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05290089909044384,
+        "median": 0.2473661527751304,
+        "p95": 0.534694608421071,
+        "max": 0.7221925612962454
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 10,
+        "trial": 7,
+        "device_seed": 9294031444875342423,
+        "matrix_relative_error": 0.009402933518275198
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "phase_0.01",
+      "factor": "phase",
+      "setting": 0.01,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.03876085152078381,
+        "median": 0.052431695020240844,
+        "p95": 0.07592032662594844,
+        "max": 0.0939836568591016
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.03004393913737811,
+        "median": 0.05043837190057193,
+        "p95": 0.08511518364853272,
+        "max": 0.14334539553087586
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05256635397325604,
+        "median": 0.24821922108281874,
+        "p95": 0.5424226597484937,
+        "max": 0.7301748949725111
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 10,
+        "trial": 7,
+        "device_seed": 9294031444875342423,
+        "matrix_relative_error": 0.0939836568591016
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "phase_0.03",
+      "factor": "phase",
+      "setting": 0.03,
+      "config": {
+        "phase_std_rad": 0.03,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.11560066274948805,
+        "median": 0.15706611902385237,
+        "p95": 0.22658127420205176,
+        "max": 0.28054773691220364
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.08982053262070544,
+        "median": 0.1510323099943376,
+        "p95": 0.2544225271336778,
+        "max": 0.4269426607274407
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05101620627788995,
+        "median": 0.2468093782271114,
+        "p95": 0.5572182874885269,
+        "max": 0.7469005425420859
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 10,
+        "trial": 7,
+        "device_seed": 9294031444875342423,
+        "matrix_relative_error": 0.28054773691220364
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "phase_0.1",
+      "factor": "phase",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.1,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.3801016917291695,
+        "median": 0.509774228310605,
+        "p95": 0.7088568404633003,
+        "max": 0.8803361597407164
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.29569822763755177,
+        "median": 0.49066196516370497,
+        "p95": 0.802360449790654,
+        "max": 1.2976084096854479
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.051217890128420096,
+        "median": 0.24512870762382882,
+        "p95": 0.556583821085359,
+        "max": 0.7930512379262036
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 10,
+        "trial": 7,
+        "device_seed": 9294031444875342423,
+        "matrix_relative_error": 0.8803361597407164
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "loss_0.1",
+      "factor": "loss",
+      "setting": 0.1,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.14383494336534403,
+        "median": 0.14742206621190906,
+        "p95": 0.14957869068565136,
+        "max": 0.1503184247156459
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.13665078777472336,
+        "median": 0.1496583827271873,
+        "p95": 0.15710857035376713,
+        "max": 0.16043246246866424
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.03812610675749726,
+        "median": 0.17796130690711348,
+        "p95": 0.3866860810605577,
+        "max": 0.5189951822978005
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 16,
+        "trial": 0,
+        "device_seed": 6442940077093685580,
+        "matrix_relative_error": 0.1503184247156459
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "loss_0.3",
+      "factor": "loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.3,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.37137871807667144,
+        "median": 0.37963571302472676,
+        "p95": 0.3843574259453336,
+        "max": 0.38614880444172667
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.3559220152181028,
+        "median": 0.3846306273418832,
+        "p95": 0.4009700069339236,
+        "max": 0.4079628676030918
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.019819335717133586,
+        "median": 0.092348834118648,
+        "p95": 0.20289610103325312,
+        "max": 0.30233918751862665
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 16,
+        "trial": 0,
+        "device_seed": 6442940077093685580,
+        "matrix_relative_error": 0.38614880444172667
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "loss_0.5",
+      "factor": "loss",
+      "setting": 0.5,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.5,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.537450708340775,
+        "median": 0.5481247544106764,
+        "p95": 0.5537474577250349,
+        "max": 0.5561320493536189
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.5191888999798558,
+        "median": 0.5541611567419441,
+        "p95": 0.5741125163847026,
+        "max": 0.5822781687770334
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.010338782472044835,
+        "median": 0.04766422668367165,
+        "p95": 0.11338629715021882,
+        "max": 0.18073906928336841
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 16,
+        "trial": 0,
+        "device_seed": 6442940077093685580,
+        "matrix_relative_error": 0.5561320493536189
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "bits_4",
+      "factor": "quantization",
+      "setting": 4,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 4,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.38852462338335897,
+        "median": 0.5434828948857783,
+        "p95": 0.7700470809889102,
+        "max": 0.8801731710989759
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.3176615029471222,
+        "median": 0.5459929174497922,
+        "p95": 0.9111015299066976,
+        "max": 1.2488411606240508
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05139810264727324,
+        "median": 0.25261470888907966,
+        "p95": 0.5239663475804041,
+        "max": 0.7323982283167371
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 19,
+        "trial": 0,
+        "device_seed": 6862981399822450625,
+        "matrix_relative_error": 0.8801731710989759
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "bits_6",
+      "factor": "quantization",
+      "setting": 6,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 6,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.1151485904212739,
+        "median": 0.14652880159131862,
+        "p95": 0.19391904495646048,
+        "max": 0.21264078495339686
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.08762484435481421,
+        "median": 0.1387173281515303,
+        "p95": 0.23936042894674062,
+        "max": 0.376717083286408
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05193622505650154,
+        "median": 0.25281105125683656,
+        "p95": 0.5420883074355443,
+        "max": 0.7063452656764092
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 1,
+        "trial": 0,
+        "device_seed": 10985891758764712615,
+        "matrix_relative_error": 0.21264078495339686
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "bits_8",
+      "factor": "quantization",
+      "setting": 8,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": 8,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.02534332359660743,
+        "median": 0.03620125435635613,
+        "p95": 0.04632014631521199,
+        "max": 0.048889961853340894
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.019769429610756784,
+        "median": 0.03379413590759121,
+        "p95": 0.05489696171464287,
+        "max": 0.07344450321911078
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05285768445222056,
+        "median": 0.24743707082360947,
+        "p95": 0.5356912459086322,
+        "max": 0.7190647529406653
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 15,
+        "trial": 0,
+        "device_seed": 17427356081577369640,
+        "matrix_relative_error": 0.048889961853340894
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "coupler_0.49",
+      "factor": "coupler",
+      "setting": 0.49,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.05140186908155909,
+        "median": 0.06000130308585069,
+        "p95": 0.0736611570150106,
+        "max": 0.08542939759330186
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.034847685668731664,
+        "median": 0.057357840876411145,
+        "p95": 0.08875567049011736,
+        "max": 0.1454385789458595
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.052964419323457725,
+        "median": 0.24777288306415102,
+        "p95": 0.5341879360307416,
+        "max": 0.7195696422698047
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 14907661415946720574,
+        "matrix_relative_error": 0.08542939759330186
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "coupler_0.47",
+      "factor": "coupler",
+      "setting": 0.47,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.47,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.15317039219498338,
+        "median": 0.1795167730151589,
+        "p95": 0.21994506971370043,
+        "max": 0.2550795998898261
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.1047140850956281,
+        "median": 0.17139784113068046,
+        "p95": 0.26483019710554706,
+        "max": 0.43341779877181513
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.05280794472857532,
+        "median": 0.24873939642049223,
+        "p95": 0.5331556750673231,
+        "max": 0.705946506963268
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 14907661415946720574,
+        "matrix_relative_error": 0.2550795998898261
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "coupler_0.45",
+      "factor": "coupler",
+      "setting": 0.45,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.45,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.25293991781099573,
+        "median": 0.2975787569297249,
+        "p95": 0.3631336764085,
+        "max": 0.42111290109749466
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.17506388761496042,
+        "median": 0.283465513540182,
+        "p95": 0.4407666043522031,
+        "max": 0.7127316245928722
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.04787709013292547,
+        "median": 0.2498584543910667,
+        "p95": 0.5342525115687176,
+        "max": 0.6940860659048256
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 14,
+        "trial": 0,
+        "device_seed": 14907661415946720574,
+        "matrix_relative_error": 0.42111290109749466
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "upper_arm_loss_0.3",
+      "factor": "arm_loss",
+      "setting": 0.3,
+      "config": {
+        "phase_std_rad": 0.0,
+        "loss_db_per_mzi": 0.0,
+        "phase_bits": null,
+        "coupler_through": 0.5,
+        "upper_arm_loss_db": 0.3
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.2116824036653582,
+        "median": 0.21822567731666453,
+        "p95": 0.2215082550052588,
+        "max": 0.22162241254446335
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.1920174833430772,
+        "median": 0.21920723075749887,
+        "p95": 0.23845904563525866,
+        "max": 0.2514973134174554
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.0325650320712115,
+        "median": 0.15520885454840588,
+        "p95": 0.3315940343239784,
+        "max": 0.45529104751353083
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 7,
+        "trial": 0,
+        "device_seed": 4637264446184004646,
+        "matrix_relative_error": 0.22162241254446335
+      },
+      "validation_passed": true
+    },
+    {
+      "size": 8,
+      "condition": "combined",
+      "factor": "combined",
+      "setting": null,
+      "config": {
+        "phase_std_rad": 0.01,
+        "loss_db_per_mzi": 0.1,
+        "phase_bits": 8,
+        "coupler_through": 0.49,
+        "upper_arm_loss_db": 0.0
+      },
+      "matrix_count": 20,
+      "realizations": 600,
+      "vector_cases": 6000,
+      "matrix_relative_error": {
+        "count": 600,
+        "p05": 0.16013615180819468,
+        "median": 0.1678734174237003,
+        "p95": 0.1802376658877848,
+        "max": 0.19067288989051412
+      },
+      "vector_relative_error": {
+        "count": 6000,
+        "p05": 0.14934631672224807,
+        "median": 0.16841335876385158,
+        "p95": 0.1949180881303539,
+        "max": 0.253935096719924
+      },
+      "power_throughput": {
+        "count": 6000,
+        "p05": 0.03781512371763158,
+        "median": 0.1781823651465467,
+        "p95": 0.3908819099573276,
+        "max": 0.5199137140128569
+      },
+      "fraction_exceeding_ideal_vector_tolerance": 1.0,
+      "passivity_passed": true,
+      "worst_matrix_case": {
+        "matrix_index": 13,
+        "trial": 3,
+        "device_seed": 3941154119937030599,
+        "matrix_relative_error": 0.19067288989051412
+      },
+      "validation_passed": true
+    }
+  ],
+  "passed": true
+}
