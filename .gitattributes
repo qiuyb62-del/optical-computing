@@ -1,0 +1,2 @@
+# Preserve the upstream dataset bytes (including its final blank line) on Windows.
+data/iris/bezdekIris.data -text whitespace=-blank-at-eof

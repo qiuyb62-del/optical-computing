@@ -94,4 +94,4 @@ print(y, W @ x)
 
 ## 6 本周边界
 
-已完成 Python 的模型、示例、测试和敏感度扫描。标定优化、AI 推理和 Lumerical 留在后续阶段。前一版期中报告反映 9 November 编码前的进度；请以本周记录作为新增工作证据，不将未执行的 Lumerical 项目描述为已完成。
+本阶段已完成 Python 的模型、示例、测试和敏感度扫描。随后完成的 AI 推理见 [第五阶段](../progress/05_ai_extension/README.md)。校准优化和 Lumerical 仍未执行。请以各阶段记录作为工作证据，不将未执行的 Lumerical 项目描述为已完成。
