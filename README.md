@@ -2,13 +2,15 @@
 
 项目名称：**Simulation of Optical Computing to Support Vector/Tensor Computation**。
 
-当前完成第五阶段 AI 验证：训练 4→4→3 的 Iris 分类器，将第一层 4×4 权重编译为 SVD/Clements 光路，对比同一模型的数字推理、理想光学推理与静态器件误差。前四阶段的代码、示例和结果仍保留。
+AI 验证分为两个连续阶段：第五阶段 Iris 花卉分类（4→4→3）完整保留；第六阶段新增 MNIST 手写数字（数字 PCA 16 维 → 16→16→10 分类器）。两者都把第一层权重编译为 SVD/Clements 光路，比较数字、理想光学与静态器件误差。
 
-**最新入口：打开 `demo_week05.py`，在 PyCharm 点击 Run。** 示例直接使用已保存的模型，无需训练或联网；查看 [AI 结果与曲线](progress/05_ai_extension/README.md)。5 组固定种子的数字与理想光路平均准确率均为 97.33%；组合误差条件平均为 95.91%。这些是 Iris 小样本任务的 Python 仿真结果。
+**两个演示入口：`demo_week05.py` 是 Iris，`demo_week06.py` 是 MNIST。** 在 PyCharm 打开后点击 Run，均使用保存模型，无需训练或联网。查看 [Iris 结果](progress/05_ai_extension/README.md) 与 [MNIST 结果和手写数字图](progress/06_mnist/README.md)。Iris 的数字与理想光路平均准确率均为 97.33%，组合误差为 95.91%；这些历史结果保留。
+
+MNIST 新结果：全部 10,000 张官方测试图上，三组模型的数字与理想光路平均准确率均为 **92.41%**，预测完全一致；组合误差平均为 **91.25%**。这两个任务难度和数据不同，不能直接比较 Iris 与 MNIST 的百分比来判断进步。
 
 ## 环境与运行
 
-验证环境：Python 3.12.4、NumPy 2.4.1、pytest 8.3.5。第五阶段训练使用 PyTorch 2.9.1，绘图使用 Matplotlib 3.10.7；CPU 即可，不要求显卡。PyCharm 是编辑器，Python 是运行环境。前四阶段和第五阶段保存模型的快速演示只需要原有依赖；Lumerical 尚未执行。
+验证环境：Python 3.12.4、NumPy 2.4.1、pytest 8.3.5。两个 AI 阶段训练使用 PyTorch 2.9.1，绘图使用 Matplotlib 3.10.7；CPU 即可，不要求显卡。PyCharm 是编辑器，Python 是运行环境。全部保存模型的快速演示只需要原有依赖；Lumerical 尚未执行。
 
 组员拿到代码后自行建立虚拟环境，不复制其他人的 `.venv`：
 
@@ -17,6 +19,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python demo_week05.py
+python demo_week06.py
 python -m pytest -q
 ```
 
@@ -25,6 +28,7 @@ python -m pytest -q
 ```sh
 python -m pip install -r requirements-ai.txt
 python verify_week05.py
+python verify_week06.py --download
 python -m pytest -q
 ```
 
@@ -38,6 +42,8 @@ Windows 激活命令为 `.venv\Scripts\activate`。固定基础依赖版本使�
 
 第五阶段快速开发检查：`python verify_week05.py --seeds 7 --trials 2 --max-epochs 10 --patience 5 --output-dir scratch_week05`。这是冒烟检查，不是正式结果。
 
+第六阶段快速开发检查：`python verify_week06.py --download --seeds 7 --trials 1 --max-epochs 2 --patience 2 --output-dir scratch_mnist`。只缩短训练与器件扫描，数据划分仍保持完整。正式重跑可能需要几分钟；无需安装 torchvision 或 sklearn。首次下载需要网络，之后使用本地缓存。
+
 ## AI 实际计算流程
 
 4 个花卉特征 → 仅由训练集拟合的标准化 → 光学 W1x → 数字偏置与 ReLU → 数字分类头 → 三类预测。
@@ -45,6 +51,8 @@ Windows 激活命令为 `.venv\Scripts\activate`。固定基础依赖版本使�
 光学 W1x 内部仍是 V† 网格 → 被动衰减 → U 网格。保存的权重只编译一次，同一静态器件处理全部测试样本。使用共同相位参考下的复光场实部，而非强度；残余虚部单独记录。此次没有校准或噪声训练，不声称全光神经网络。
 
 完整协议和边界见 [AI 验证说明](docs/ai-validation.md)。
+
+MNIST 下一阶段：28×28 图片 → 数字 PCA 降至 16 维 → 光学 16×16 第一层 → 数字偏置与 ReLU → 数字十分类头。完整流程包含两套 16 通道 Clements 网格（共 240 个 MZI），使用全部 10,000 张官方测试图。PCA 只在训练集拟合。完整实验方法见 [MNIST 验证协议](docs/mnist-validation.md)。
 
 ## 第四阶段最小调用
 
@@ -95,11 +103,15 @@ W 可以是非酉、零或不满秩方阵。`compile_svd` 内部把 W 分成 UΣ
 | src/ai_inference.py | 数字/光学第一层、数字分类头、完整复场与分类指标 |
 | demo_week05.py | 离线重放保存模型，打印三组分类结果和具体样本 |
 | verify_week05.py、src/ai_plots.py | 五组训练、配对误差扫描、逐器件记录及图表 |
+| demo_week06.py | MNIST 离线重放，20 张固定示例与完整测试结果摘要 |
+| verify_week06.py、src/mnist_plots.py | MNIST 三组训练、全测试集对照、器件误差与图表 |
+| src/mnist_data.py、src/mnist_training.py | 官方 IDX 下载校验、训练集 PCA、16→16→10 训练 |
+| src/batch_optics.py | 多输入逐 MZI 批量传播；复用静态器件，不用稠密权重替代 |
 | demo_week04.py | 理想与非理想 4×4 对照；保存输入、器件快照和输出 |
 | verify_week04.py | 配对扫描、理想回归、被动性检查及 JSON/CSV/SVG 结果 |
 | demo_week03.py | 4×4 复数示例；`--size 2 --real` 切换为 2×2 实数 |
 | verify_week03.py | 验证 2、4、8 通道一般方阵并生成报告 |
-| tests/ | 安装 AI 依赖后 170 项测试通过；含数据划分、训练集标准化、权重方向、光路复用与模型重放 |
+| tests/ | 188 项测试通过：数值、数据划分、训练集预处理、权重方向、光路复用、批量传播和离线模型重放 |
 | demo.py、demo_week02.py、verify_week02.py | 前两阶段的示例与批量验证 |
 | docs/technical-standards.md | 全组交给 AI 的统一数学规则 |
 
@@ -112,6 +124,7 @@ W 可以是非酉、零或不满秩方阵。`compile_svd` 内部把 W 分成 UΣ
 | progress/03_svd_matmul/ | 一般方阵乘法、完整示例与报告 | 已完成 |
 | progress/04_nonidealities/ | 静态相位误差、损耗、量化、耦合比与完整扫描 | Python 部分已完成 |
 | progress/05_ai_extension/ | Iris 分类、光学第一层、固定误差对照、模型与图表 | Python 部分已完成 |
+| progress/06_mnist/ | MNIST 十分类、16 通道光路、完整测试集、模型与图表 | Python 部分已完成 |
 
 第三阶段共 321 个矩阵、2,140 组输入通过验收：最大矩阵重建相对误差约 4.24×10⁻¹⁵；按相对判据检查的输出最大误差约 9.25×10⁻¹⁵，零或近零输出另按绝对误差检查。详见 [第三阶段记录](progress/03_svd_matmul/README.md)。这些是浮点数值误差，不是真实光器件测量误差；不同平台末位可能变化。
 

@@ -1,7 +1,7 @@
-"""Frozen 4-4-3 classifier. Only the first weight multiplication is optical.
+"""Frozen N-N-K classifier. Only the first weight multiplication is optical.
 
 Weights follow torch.nn.Linear: W[out, in]; sample x is a column in the circuit.
-Bias, ReLU and the 3-class output head remain digital. The readout takes Re(E)
+Bias, ReLU and the output head remain digital. The readout takes Re(E)
 in a fixed phase reference; this assumes coherent field access, not a detector
 measuring |E|^2. No per-sample phase alignment or error calibration is applied.
 This module needs only NumPy, including when replaying a saved trained model.
@@ -21,7 +21,14 @@ class ClassifierWeights:
     b2: tuple
 
     def __post_init__(self):
-        for name, shape in (("W1", (4, 4)), ("b1", (4,)), ("W2", (3, 4)), ("b2", (3,))):
+        first, last = np.asarray(self.W1), np.asarray(self.W2)
+        if first.ndim != 2 or first.shape[0] == 0 or first.shape[0] != first.shape[1]:
+            raise ValueError("W1 must be a nonempty square matrix")
+        n = first.shape[0]
+        if last.ndim != 2 or last.shape[1] != n or last.shape[0] < 2:
+            raise ValueError("W2 must have shape (classes >= 2, inputs)")
+        k = last.shape[0]
+        for name, shape in (("W1", (n, n)), ("b1", (n,)), ("W2", (k, n)), ("b2", (k,))):
             a = np.asarray(getattr(self, name))
             if a.shape != shape or np.iscomplexobj(a) or not np.all(np.isfinite(a)):
                 raise ValueError(f"{name} must be a finite real array of shape {shape}")
@@ -32,9 +39,17 @@ class ClassifierWeights:
     def to_dict(self):
         return {name: getattr(self, name) for name in ("W1", "b1", "W2", "b2")}
 
+    @property
+    def size(self):
+        return len(self.b1)
+
+    @property
+    def classes(self):
+        return len(self.b2)
+
 
 def digital_forward(X, weights):
-    X = features(X)
+    X = features(X, weights.size)
     linear = X @ np.asarray(weights.W1).T
     hidden = np.maximum(linear + np.asarray(weights.b1), 0.0)
     logits = hidden @ np.asarray(weights.W2).T + np.asarray(weights.b2)
@@ -42,9 +57,9 @@ def digital_forward(X, weights):
 
 
 def optical_forward(X, weights, circuit):
-    X = features(X)
-    if not isinstance(circuit, (SVDCircuit, NonidealCircuit)) or circuit.size != 4:
-        raise ValueError("the Iris optical layer requires a compiled 4-channel circuit")
+    X = features(X, weights.size)
+    if not isinstance(circuit, (SVDCircuit, NonidealCircuit)) or circuit.size != weights.size:
+        raise ValueError("the optical circuit size must match the classifier")
     trace = trace_svd if isinstance(circuit, SVDCircuit) else trace_nonideal
     records = [trace(x, circuit) for x in X]
     linear = np.stack([r.restored_output for r in records])
@@ -68,13 +83,13 @@ def relative_norm(actual, reference):
 
 def classification_metrics(y, logits):
     logits = np.asarray(logits, dtype=np.float64)
-    if logits.ndim != 2 or logits.shape[1] != 3 or not np.all(np.isfinite(logits)):
-        raise ValueError("logits must have finite shape (samples, 3)")
-    y = labels(y, len(logits))
+    if logits.ndim != 2 or logits.shape[1] < 2 or not np.all(np.isfinite(logits)):
+        raise ValueError("logits must have finite shape (samples, classes >= 2)")
+    y = labels(y, len(logits), logits.shape[1])
     if not len(y):
         raise ValueError("classification needs at least one example")
     pred = logits.argmax(axis=1)
-    confusion = np.zeros((3, 3), dtype=int)
+    confusion = np.zeros((logits.shape[1], logits.shape[1]), dtype=int)
     np.add.at(confusion, (y, pred), 1)
     shifted = logits - logits.max(axis=1, keepdims=True)
     nll = np.log(np.exp(shifted).sum(axis=1)) - shifted[np.arange(len(y)), y]

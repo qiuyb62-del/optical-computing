@@ -5,3 +5,6 @@ __pycache__/
 .DS_Store
 scratch_week04/
 scratch_week05/
+scratch_mnist/
+data/mnist/raw/
+work/

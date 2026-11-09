@@ -17,20 +17,20 @@ def integer(value, name, minimum=0):
     return int(value)
 
 
-def features(X):
+def features(X, n_features=4):
     raw = np.asarray(X)
     if np.iscomplexobj(raw):
-        raise ValueError("Iris features must be real")
+        raise ValueError("features must be real")
     X = np.array(raw, dtype=np.float64, copy=True)
-    if X.ndim != 2 or X.shape[0] == 0 or X.shape[1] != 4 or not np.all(np.isfinite(X)):
-        raise ValueError("features must be a finite nonempty (samples, 4) array")
+    if X.ndim != 2 or X.shape[0] == 0 or X.shape[1] != n_features or not np.all(np.isfinite(X)):
+        raise ValueError(f"features must be a finite nonempty (samples, {n_features}) array")
     return X
 
 
-def labels(y, count):
+def labels(y, count, n_classes=3):
     y = np.asarray(y)
-    if y.shape != (count,) or y.dtype.kind not in "iu" or np.any((y < 0) | (y > 2)):
-        raise ValueError("labels must be integer class IDs 0, 1, 2, one per sample")
+    if y.shape != (count,) or y.dtype.kind not in "iu" or np.any((y < 0) | (y >= n_classes)):
+        raise ValueError(f"labels must be integer class IDs in [0, {n_classes}), one per sample")
     return y.astype(np.int64, copy=True)
 
 
