@@ -1,0 +1,151 @@
+{
+  "mesh": {
+    "steps_nm": [
+      10.0,
+      5.0,
+      2.5,
+      1.25
+    ],
+    "neff": [
+      2.4452520854351882,
+      2.4456570441773566,
+      2.445748091522251,
+      2.4457671489292943
+    ],
+    "overlap": [
+      null,
+      0.9994084493081378,
+      0.9998511523023252,
+      0.9999621895337362
+    ],
+    "phase_checks": [
+      {
+        "from_step_nm": 10.0,
+        "to_step_nm": 5.0,
+        "finite": true,
+        "delta_neff": 0.0004049587421683931,
+        "delta_neff_real": 0.0004049587421683931,
+        "delta_neff_imag": 0.0,
+        "phase_delta_rad": 0.16415682701976608,
+        "power_loss_delta_db": 0.0,
+        "phase_limit_rad": 0.01,
+        "s21_delta_abs": 0.1639725720058434,
+        "phase_converged": false
+      },
+      {
+        "from_step_nm": 5.0,
+        "to_step_nm": 2.5,
+        "finite": true,
+        "delta_neff": 9.10473448945126e-05,
+        "delta_neff_real": 9.10473448945126e-05,
+        "delta_neff_imag": 0.0,
+        "phase_delta_rad": 0.03690757030315574,
+        "power_loss_delta_db": 0.0,
+        "phase_limit_rad": 0.01,
+        "s21_delta_abs": 0.03690547557456795,
+        "phase_converged": false
+      },
+      {
+        "from_step_nm": 2.5,
+        "to_step_nm": 1.25,
+        "finite": true,
+        "delta_neff": 1.905740704311043e-05,
+        "delta_neff_real": 1.905740704311043e-05,
+        "delta_neff_imag": 0.0,
+        "phase_delta_rad": 0.0077252399952394985,
+        "power_loss_delta_db": 0.0,
+        "phase_limit_rad": 0.01,
+        "s21_delta_abs": 0.007725220785484452,
+        "phase_converged": true
+      }
+    ],
+    "phase_mesh_converged": false,
+    "mode_identity_valid": true
+  },
+  "domain": {
+    "values": {
+      "3x2": 2.445748091522251,
+      "4x3": 2.4457483599129337,
+      "5x4": 2.4457483599911534
+    },
+    "phase_3x2_to_4x3": 0.00010879667053490524,
+    "phase_4x3_to_5x4": 3.170764995596131e-08,
+    "domain_converged": true,
+    "note": "single 2.5 nm step; not a mesh series"
+  },
+  "boundary": {
+    "metal": {
+      "real": 2.4457483599911534,
+      "imag": 0.0
+    },
+    "pml16": {
+      "real": 2.4457483599911685,
+      "imag": -4.041359760452459e-17
+    },
+    "pml24": {
+      "real": 2.445748359991149,
+      "imag": -3.1272141442924153e-17
+    },
+    "phase_metal_to_pml16": 6.120646654569986e-12,
+    "phase_pml16_to_pml24": 7.92083684709057e-12,
+    "boundary_checked": true,
+    "negative_imag_pml16": -4.041359760452459e-17,
+    "negative_imag_pml24": -3.1272141442924153e-17
+  },
+  "eme": {
+    "neff_from_length": 2.43636603705101,
+    "fde_neff": 2.445748091522251,
+    "phase_fde_vs_eme_100um": 3.8031733422491523,
+    "strict_raw_passive": [
+      false,
+      false,
+      false
+    ],
+    "max_singular": [
+      1.0000000000000189,
+      1.000000000000019,
+      1.000000000000019
+    ],
+    "max_abs": [
+      1.0000000000000189,
+      1.000000000000019,
+      1.000000000000019
+    ],
+    "length_checks": [
+      {
+        "from_length_um": 10.0,
+        "to_length_um": 10.1,
+        "delta_length_um": 0.09999999999999964,
+        "s21_from": {
+          "real": -0.1966888396264217,
+          "imag": -0.9804659608402779
+        },
+        "s21_to": {
+          "real": 0.710101425746219,
+          "imag": -0.7040994000517434
+        },
+        "beta_from_length": 9876218.894780813,
+        "neff_from_length": 2.43636603705101,
+        "phase_converged": null
+      },
+      {
+        "from_length_um": 10.1,
+        "to_length_um": 10.2,
+        "delta_length_um": 0.09999999999999964,
+        "s21_from": {
+          "real": 0.710101425746219,
+          "imag": -0.7040994000517434
+        },
+        "s21_to": {
+          "real": 0.9787611316494709,
+          "imag": 0.20500401745401278
+        },
+        "beta_from_length": 9876218.894780813,
+        "neff_from_length": 2.43636603705101,
+        "phase_converged": null
+      }
+    ]
+  },
+  "complete": false,
+  "complete_reason": "mesh last two intervals not both <=0.01; 0.625 nm did not finish; domain/boundary are separate checks"
+}

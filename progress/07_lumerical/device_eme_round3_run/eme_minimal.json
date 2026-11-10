@@ -1,0 +1,55 @@
+{
+  "stage": "device_eme_minimal",
+  "timestamp": "2026-11-12T10:03:03+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "status": "nonzero_s_observed",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "length_um": 10.0
+  },
+  "solver": "MODE EME 3D: X Prop, one uniform cell, PML 16",
+  "ports": [
+    "EME::Ports::port_1",
+    "EME::Ports::port_2"
+  ],
+  "complete": false,
+  "valid_s_parameters": false,
+  "user_s_matrix_shape": [
+    2,
+    2
+  ],
+  "user_s_matrix_max_abs": 1.0000000000000189,
+  "user_s_matrix_all_zero": false,
+  "user_s_matrix": {
+    "real": [
+      [
+        0.0,
+        -0.19668883962640776
+      ],
+      [
+        -0.19668883962640776,
+        0.0
+      ]
+    ],
+    "imag": [
+      [
+        0.0,
+        -0.9804659608402807
+      ],
+      [
+        -0.9804659608402807,
+        0.0
+      ]
+    ]
+  },
+  "expected_user_s_matrix_shape": [
+    2,
+    2
+  ],
+  "mode_identity_valid": null,
+  "unitarity_error": 3.774758283725532e-14,
+  "candidate_lossless": true,
+  "nonzero_s_observed": true,
+  "note": "Candidate raw S only. Mode identity, passivity, mesh, domain and phase convergence must be validated separately."
+}

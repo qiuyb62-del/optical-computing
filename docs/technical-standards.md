@@ -27,10 +27,14 @@
 - 标准化参数仅从训练集拟合，早停和权重选择只使用验证集；测试集仅评估。保存数据哈希、划分行号、权重、训练种子及器件 seed。不能按测试准确率挑选 seed 或报告最好的一次。
 - AI 读出使用共同相位参考下恢复复光场的实部，单独报告虚部；不使用幅度或强度替代，也不逐样本对齐相位。当前假设可读复场，不声称实现真实相干接收器。
 - 每个训练模型只编译一次；每台静态非理想器件处理整个测试集，期间不重新采样。比较完整复线性输出、ReLU 后激活、logits、预测一致率与分类准确率。准确率变化用百分点，不等同于数值相对误差。
-- 当前 AI 实验不含校准、噪声训练或 Lumerical。图表的经验分位数不是置信区间，确定性重复 seed 不算独立制造样本。固定环境提高复现性但不保证不同平台训练逐位一致。
+- 第五阶段 AI 实验当时不含校准、噪声训练或 Lumerical；第七阶段已把 Iris/MNIST 第一层 H 放进 Lumerical，但仍不包含校准和噪声训练。图表的经验分位数不是置信区间，确定性重复 seed 不算独立制造样本。固定环境提高复现性但不保证不同平台训练逐位一致。
 
 - 第六阶段新增 MNIST，不替换 Iris。官方 60,000/10,000 图片；前者划分 50,000 训练、10,000 验证。图片除以 255，仅训练集拟合 PCA16，不白化。16→16→10 网络只将第一层 16×16 权重编译为光路，两套网格共 240 个 MZI。具体种子、早停、误差条件和数据文件见 mnist-validation.md。
 - 批量光场 shape=(samples,N)，每一行代表一个独立列向量输入的转置；每个 2×2 MZI 作用于相邻两列，依次应用所有单元及输出相位。批量接口必须与逐样本传播相符，不能通过重建稠密矩阵走捷径。
 - MNIST 使用整个官方测试集评估；20 张固定展示图片只用于解释流程，不能把其准确率当作全测试集性能。所有结果分阶段保存到 progress/05_ai_extension 和 progress/06_mnist。
 
-接口与推导见 clements-decomposition.md、svd-matmul.md、nonidealities.md、ai-validation.md 和 mnist-validation.md。修改代码前先使用本标准；不得因参考论文或其他库的公式不同而悄悄替换矩阵 convention。
+- 第七阶段 Lumerical 实现沿用上述全部约定。实测 `Waveguide Coupler` 的 `conjugate=0` 为 `B`、`conjugate=1` 为 `B†`；`coupling coefficient` 是交叉耦合功率，项目直通功率 η 对应 `coefficient=1−η`；`Optical Phase Shift` 为 `exp(+i phase)`。MZI 固定为 `P(φ)→B→P(2θ)→B†→P(−θ)`，不得用同一个 B 连接两个耦合器。
+- Lumerical 频域测试只使用 ONA/SPS；ONA 的实际频点为 `start+n(stop−start)/N`，读取复 S21 做相位比较时必须使用结果中的实际频率。时域读出使用共同 CW、0/π2 LO 和平衡 PD；`Fork 1xN` 是理想场复制，只作测试台扇出。16 通道 H 回灌属于“Lumerical 传输矩阵提取后的混合推理”，不能声称每个样本都在 Lumerical 中做了瞬态仿真。
+- Lumerical 非理想实验必须从 Python `RealizedMesh` 的固定 actual phases 写入，不能按输入重新采样；耦合比、损耗、量化、耦合器相位的映射见 docs/lumerical-guide.md。
+
+接口与推导见 clements-decomposition.md、svd-matmul.md、nonidealities.md、ai-validation.md、mnist-validation.md 和 lumerical-guide.md。修改代码前先使用本标准；不得因参考论文或其他库的公式不同而悄悄替换矩阵 convention。

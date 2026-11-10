@@ -1,0 +1,107 @@
+All processes are communicating and ready to proceed to simulation...
+CPU threads per process: 1
+Checked out feature at start: 'FDTD_Solutions_engine'
+Checked out HPC license feature: 'FDTD_Solutions_engine'
+Ansys Lumerical 2025 R2 FDTD Solver Version 8.34.4175 (Windows 64bit)
+ expires (month/day/year): 12/31/2035
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 1055@localhost
+current time: 周四 11月 12 09:26:41 2026
+Running on host: DESKTOP-NDH842O
+host available memory (GiB) 1.263
+
+All processes are communicating and ready to proceed to simulation...
+Detected 4 processes on 1 host
+This process is the local leader
+Running fsp file: D:\Program Files\Ansys Inc\v252\Lumerical\bin\fdtd-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFeU9BbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ21GVVRUaEpiWE5IYm1NME0xWnJZbmxTWldsNlJWZFlNMnhIT1RGUFkzaGZjM2hCYjIxSVJrNUtSVWx5U21KRVpVZHBlRzlTUkdJeE1FSm1SR2QyU1hwdGMxOVBUWGRmUzBkUlVrOXNkRmx0ZVc1TU1qVllNMUJpVEZoUE1uRnNiRkJyUW5CeVEzRnlOMEZqVm14Q2JVaEpTekZXWTJGeU5HTm1lamxtTFZKVVQxcHNkMDVSZFhCUWJETXlNVGxMTFRCMlgzUjRkV0pvWlc1SVpsRk9ibE54WWpGSlQzQjRRMU0yV1VSa1ZETnpSVVY2UjA1cGIzTlRiRU5PTUZoZldXcEVaWFJUYjBOT1RHNVhlVFV4VjNaM1VGVnFabUpvVVhKTFpVRk1NMGx2Y21wMkxWWjBZbm8wWlMxSVlVUnRUelZ6TjBnNFRHTmhaVU5GWjFack9XdEJiSEJFYzFCMlltcG5USFV6T1Y5QmJEVkJWV1Z2ZDJwM1MybFdWVGhpTjJkckxUUklRWEJ4T1c5SFkwVllTbE4xU0V0d1YxZ3hhMmQyZFc4MVZqUTRkUzFrUzNocFRYZDBOVzlETmpFMFJYVlROVmhJVEcxdmQwWkpTbVpRUVZnS1BDOU5VMGMtQ2c8L0RBVEE+PC9BTlNZU19MSUNFTlNJTkdfQ09OVEVYVF9EQVRBPgpBTlNZU19MSUNFTlNJTkdfV09SS0ZMT1dfU0VTU0lPTj08REFUQT48SUQ+REVTS1RPUC1OREg4NDJPX2hmZF8yNTI8L0lEPjwvREFUQT4K C:/Users/hfd/Documents/deepseek-harness/default-workspace/optical-computing-git/progress/07_lumerical/device_fdtd_slab/fdtd_slab_mesh2.fsp
+Estimate of memory required: 0.074 GiB
+
+Starting meshing
+Simulation size in gridpoints: 1 x 38 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 38 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 38 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+Sharing project file with 3 peer processes on this host
+All processes are communicating and ready to proceed to simulation...
+number of processors is 4
+processors are distributed as: 4x1x1
+Peak CPU memory used by end of initialization: 0.078454 GiB
+Running 2D Simulation
+Starting meshing
+Simulation size in gridpoints: 76 x 82 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+18% initialized.
+20% initialized.
+25% initialized.
+Starting meshing
+Simulation size in gridpoints: 76 x 82 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+43% initialized.
+45% initialized.
+finished material properties
+Selected kernel with optimization level: 2 and split-field propagation direction: 0
+Starting meshing
+Simulation size in gridpoints: 76 x 82 x 1
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.000000 seconds of CPU time
+86% initialized.
+90% initialized.
+Selected kernel with optimization level: 2 and split-field propagation direction: 0
+100% initialized.
+-----------------------------------------
+Beginning initialization of 2D FDTD Simulation
+  Including TE Simulation
+Starting to add sources to simulation
+
+Adding Mode source propagating in X
+Starting to add boundary conditions to simulation
+Adding PML BC
+Adding parallel BC
+Adding PML BC
+Adding PML BC
+Starting to add monitors to Simulation
+Adding analysis monitor
+Adding frequency monitor
+Adding frequency monitor
+Finished initialization of 2D Simulation
+-----------------------------------------
+Peak CPU memory used by end of meshing: 0.079877 GiB
+All processes are communicating and ready to proceed to simulation...
+Starting 96203 total iterations
+0.0498943% complete. Elapsed simulation time: 4.98943e-15 secs. Max time remaining: 38 secs. Auto Shutoff: 1
+2.11219% complete. Elapsed simulation time: 2.11219e-13 secs. Max time remaining: 17 secs. Auto Shutoff: 1.39171e-09
+100% complete. Max time remaining: 0 mins, 0 secs. Auto Shutoff: 9.2825e-10
+Early termination of simulation, the autoshutoff criteria are satisfied.
+Completed 2072 iterations, or 2.153769e-13s of Simulation Time
+Process 0 starting to collect data
+    collecting TM monitor data
+    collecting TE monitor data
+    collecting TM source data
+    collecting TE source data
+Finished collecting data
+Simulation completed successfully at: 周四 11月 12 09:26:42 2026
+Peak CPU memory used in the simulation (GiB): 0.079915
+Overall wall time measurements in seconds: 1.442004
+  time to mesh and initialize: 0.033751
+  time to run FDTD simulation: 0.385945
+  time to checkpoint simulation: 0.000000
+  time to finalize data and save to files: 0.014526
+  miscellaneous time: 1.007735
+  FDTD solver speed on process 0 (Mnodes/s): 33.457325
+  total FDTD solver speed on 4 processes (Mnodes/s): 133.829300
+

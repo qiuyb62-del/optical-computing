@@ -19,8 +19,8 @@ def test_small_experiment_reproducible_and_distinguishes_experimental_error(tmp_
     json.dumps(a,allow_nan=False)
     save_csv(a,tmp_path/'summary.csv')
     save_svg(a,tmp_path/'curves.svg')
-    assert len((tmp_path/'summary.csv').read_text().splitlines())==17
-    assert 'No hardware measurements' in (tmp_path/'curves.svg').read_text()
+    assert len((tmp_path/'summary.csv').read_text(encoding='utf-8').splitlines())==17
+    assert 'No hardware measurements' in (tmp_path/'curves.svg').read_text(encoding='utf-8')
 
 
 @pytest.mark.parametrize('kwargs',[{'samples':0},{'trials':0},{'seed':-1},{'sizes':()},

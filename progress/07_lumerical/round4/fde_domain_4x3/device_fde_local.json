@@ -1,0 +1,145 @@
+{
+  "stage": "device_fde_local_convergence",
+  "timestamp": "2026-11-12T11:19:22+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "waveguide_length_um": 100.0,
+    "uniform_along_x": true
+  },
+  "solver": "MODE FDE 2D X normal, full-vector, explicit boundary",
+  "boundary": "metal",
+  "pml_layers": null,
+  "domain_um": {
+    "y": 4.0,
+    "z": 3.0
+  },
+  "outer_mesh_target_nm": 50.0,
+  "core_mesh_um": {
+    "y": 1.2,
+    "z": 0.8
+  },
+  "trial_modes": 10,
+  "steps_nm": [
+    2.5
+  ],
+  "runs": [
+    {
+      "step_nm": 2.5,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.4457483599129337,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9835243696708768,
+      "overlap": null,
+      "power_coupling": null,
+      "overlap_raw": null,
+      "modes_found": 20,
+      "mode_candidates": [
+        {
+          "name": "FDE::data::mode1",
+          "neff": {
+            "real": 2.4457483599129337,
+            "imag": 0.0
+          },
+          "te_fraction": 0.9835243696708768
+        },
+        {
+          "name": "FDE::data::mode2",
+          "neff": {
+            "real": 1.770670741446227,
+            "imag": 0.0
+          },
+          "te_fraction": 0.044295520944144164
+        },
+        {
+          "name": "FDE::data::mode3",
+          "neff": {
+            "real": 1.493066882728631,
+            "imag": 0.0
+          },
+          "te_fraction": 0.6871986138669711
+        },
+        {
+          "name": "FDE::data::mode4",
+          "neff": {
+            "real": 1.4120745687638858,
+            "imag": 0.0
+          },
+          "te_fraction": 0.9988033813300232
+        },
+        {
+          "name": "FDE::data::mode5",
+          "neff": {
+            "real": 1.4092021985359064,
+            "imag": 0.0
+          },
+          "te_fraction": 0.0014517073547052773
+        },
+        {
+          "name": "FDE::data::mode6",
+          "neff": {
+            "real": 1.408225858726738,
+            "imag": 0.0
+          },
+          "te_fraction": 0.37408056066517986
+        },
+        {
+          "name": "FDE::data::mode7",
+          "neff": {
+            "real": 1.3979161804582954,
+            "imag": 0.0
+          },
+          "te_fraction": 0.013894908457336638
+        },
+        {
+          "name": "FDE::data::mode8",
+          "neff": {
+            "real": 1.393849804486417,
+            "imag": 0.0
+          },
+          "te_fraction": 0.6697264346565067
+        },
+        {
+          "name": "FDE::data::mode9",
+          "neff": {
+            "real": 1.3672572142891022,
+            "imag": 0.0
+          },
+          "te_fraction": 0.008170606732131084
+        },
+        {
+          "name": "FDE::data::mode10",
+          "neff": {
+            "real": 1.3518300786104167,
+            "imag": 0.0
+          },
+          "te_fraction": 0.9777906270959313
+        }
+      ],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 551,
+        "cells_z": 379,
+        "min_dy_nm": 2.4999999999935176,
+        "max_dy_nm": 50.000000000006615,
+        "min_dz_nm": 2.4999999999973292,
+        "max_dz_nm": 50.00000000000281
+      },
+      "reference_dcard": "ref_step_0"
+    }
+  ],
+  "phase_checks": [],
+  "last_two_phase_checks": [],
+  "phase_limit_rad": 0.01,
+  "mode_identity_valid": false,
+  "phase_mesh_converged": false,
+  "domain_converged": null,
+  "boundary_checked": null,
+  "loss_check_status": "all_imag_neff_zero",
+  "complete": false,
+  "complete_scope": "single domain/boundary; domain and boundary scans required",
+  "limitation": "Uniform strip only; not a coupler/MZI or wafer cross-section."
+}

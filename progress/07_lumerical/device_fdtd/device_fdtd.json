@@ -1,0 +1,59 @@
+{
+  "stage": "device_fdtd_diagnostic",
+  "status": "diagnostic only; not used for quantitative circuit S-parameters",
+  "timestamp": "2026-11-10T23:09:05+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "width_um": 0.5,
+    "height_um": 0.22,
+    "length_um": 10.0,
+    "material": "Si (Silicon) - Palik on SiO2 (Glass) - Palik"
+  },
+  "solver": "2D FDTD, fundamental TE mode source, 1550-1560 nm, 5 ps, autoshutoff 1e-6",
+  "diagnosis": "Solver completes in about 4 s. Earlier apparent 10-minute hangs came from enumerating all results and retrieving farfield; this script reads only T and source neff.",
+  "mesh_accuracy_coarse": 2,
+  "mesh_accuracy_fine": 3,
+  "coarse": {
+    "wavelength_um": [
+      1.56,
+      1.557487922705314,
+      1.554983922829582,
+      1.5524879614767255,
+      1.55
+    ],
+    "T": [
+      1.0754105634990518,
+      1.028575439678293,
+      0.9157554861914196,
+      0.7948741446636052,
+      0.7026054179111771
+    ],
+    "source_neff": {
+      "real": 3.148118286721006,
+      "imag": 0.0
+    }
+  },
+  "fine": {
+    "wavelength_um": [
+      1.56,
+      1.557487922705314,
+      1.554983922829582,
+      1.5524879614767255,
+      1.55
+    ],
+    "T": [
+      0.8606178804720619,
+      0.9875280209207916,
+      1.0739166180935964,
+      1.0706915301569415,
+      0.9804946191677933
+    ],
+    "source_neff": {
+      "real": 3.1535122449437307,
+      "imag": 0.0
+    }
+  },
+  "max_abs_T_change_mesh2_to_mesh3": 0.2778892012566162,
+  "max_T": 1.0739166180935964,
+  "limitation": "The 10 um strip ends inside the domain; facet reflection and the short run produce a T ripple, so this FDTD diagnostic is not used as a converged device S-parameter."
+}
