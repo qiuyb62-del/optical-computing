@@ -1,0 +1,122 @@
+{
+  "stage": "device_fde_local_convergence",
+  "timestamp": "2026-11-12T10:01:06+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "waveguide_length_um": 100.0
+  },
+  "solver": "MODE FDE 2D X normal, fundamental TE, local core mesh override",
+  "wavelength_um": 1.55,
+  "domain_um": {
+    "y": 3.0,
+    "z": 2.0
+  },
+  "core_mesh_um": {
+    "y": 1.2,
+    "z": 0.8
+  },
+  "steps_nm": [
+    20.0,
+    10.0,
+    7.5,
+    5.0
+  ],
+  "runs": [
+    {
+      "step_nm": 20.0,
+      "neff": {
+        "real": 2.450003346740593,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9848793820396181,
+      "modes_found": 20
+    },
+    {
+      "step_nm": 10.0,
+      "neff": {
+        "real": 2.4452636003074266,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9837751700276776,
+      "modes_found": 20
+    },
+    {
+      "step_nm": 7.5,
+      "neff": {
+        "real": 2.445295149213711,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9837934241129683,
+      "modes_found": 20
+    },
+    {
+      "step_nm": 5.0,
+      "neff": {
+        "real": 2.4456649894856497,
+        "imag": 0.0
+      },
+      "te_fraction": 0.983621350940498,
+      "modes_found": 20
+    }
+  ],
+  "phase_checks": [
+    {
+      "from_step_nm": 20.0,
+      "to_step_nm": 10.0,
+      "delta_neff": 0.004739746433166214,
+      "phase_delta_rad": 1.9213358160404392,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 1.6391488882997032,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 10.0,
+      "to_step_nm": 7.5,
+      "delta_neff": 3.1548906284317724e-05,
+      "phase_delta_rad": 0.01278887899504586,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.012788791841429994,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 7.5,
+      "to_step_nm": 5.0,
+      "delta_neff": 0.00036984027193875946,
+      "phase_delta_rad": 0.14992096533218813,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.14978060194137818,
+      "phase_converged": false
+    }
+  ],
+  "last_two_phase_checks": [
+    {
+      "from_step_nm": 10.0,
+      "to_step_nm": 7.5,
+      "delta_neff": 3.1548906284317724e-05,
+      "phase_delta_rad": 0.01278887899504586,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.012788791841429994,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 7.5,
+      "to_step_nm": 5.0,
+      "delta_neff": 0.00036984027193875946,
+      "phase_delta_rad": 0.14992096533218813,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.14978060194137818,
+      "phase_converged": false
+    }
+  ],
+  "phase_limit_rad": 0.01,
+  "te_fraction_valid": true,
+  "mode_identity_check": "not measured; TE fraction alone is insufficient",
+  "mode_identity_valid": null,
+  "domain_boundary_converged": null,
+  "phase_mesh_converged": false,
+  "phase_converged": false,
+  "complete": false,
+  "limitation": "Local-mesh convergence is not a substitute for a full 3D strip-waveguide measurement."
+}

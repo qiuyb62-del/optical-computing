@@ -1,0 +1,18 @@
+{
+  "fde_mesh_dir": "progress/07_lumerical/round5/fde_low_modes",
+  "fde_expected_steps_nm": [2.5, 1.25, 0.625],
+  "fde_reference_step_nm": 2.5,
+  "fde_domain_dirs": [
+    "progress/07_lumerical/round4/fde_mesh_1p25",
+    "progress/07_lumerical/round4/fde_domain_4x3",
+    "progress/07_lumerical/round4/fde_domain_5x4"
+  ],
+  "fde_boundary_dirs": {
+    "metal": "progress/07_lumerical/round4/fde_domain_5x4",
+    "pml16": "progress/07_lumerical/round4/fde_pml16",
+    "pml24": "progress/07_lumerical/round4/fde_pml24"
+  },
+  "eme_dir": "progress/07_lumerical/round5/eme_matched_2p5",
+  "eme_expected_lengths_um": [10.0, 10.1, 10.2],
+  "fde_reference_dir": "progress/07_lumerical/round4/fde_pml16"
+}

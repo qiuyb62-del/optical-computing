@@ -1,0 +1,313 @@
+{
+  "stage": "lumerical_single_mzi",
+  "timestamp": "2026-11-10T23:37:32+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "python": "3.13.1",
+  "numpy": "2.2.2",
+  "seed": 20261110,
+  "convention": "T(theta,phi)=[[exp(i phi)cos theta,-sin theta],[exp(i phi)sin theta,cos theta]]",
+  "coupler_mapping": "input coupler conjugate=0 gives B; output coupler conjugate=1 gives B†",
+  "phase_mapping": "input phi; upper arm delta=2theta; output chi_upper=chi_lower=-theta",
+  "cases": [
+    {
+      "name": "theta=0,phi=0",
+      "shape": [
+        2,
+        2
+      ],
+      "relative_error": 2.220446049250313e-16,
+      "absolute_error": 2.220446049250313e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 1.4142135623730951,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            1.0000000000000002,
+            0.0
+          ],
+          [
+            0.0,
+            1.0000000000000002
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            1.0,
+            -0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "theta": 0.0,
+      "phi": 0.0,
+      "fallback_count": 2,
+      "fallback_entries": [
+        {
+          "output": 1,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        }
+      ],
+      "complex_fully_measured": false,
+      "zero_amplitude_upper_bound": 3.162277660168379e-07,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": false
+    },
+    {
+      "name": "theta=0.785398163397,phi=1.1",
+      "shape": [
+        2,
+        2
+      ],
+      "relative_error": 1.60348179391144e-16,
+      "absolute_error": 1.1569609755724778e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 1.4142135623730951,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            0.3207408933799424,
+            -0.7071067811865477
+          ],
+          [
+            0.3207408933799424,
+            0.7071067811865477
+          ]
+        ],
+        "imag": [
+          [
+            0.6301787677428022,
+            -3.255204057963016e-17
+          ],
+          [
+            0.6301787677428022,
+            3.255204057963016e-17
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            0.3207408933799424,
+            -0.7071067811865476
+          ],
+          [
+            0.3207408933799424,
+            0.7071067811865476
+          ]
+        ],
+        "imag": [
+          [
+            0.6301787677428021,
+            0.0
+          ],
+          [
+            0.6301787677428021,
+            0.0
+          ]
+        ]
+      },
+      "theta": 0.7853981633974483,
+      "phi": 1.1,
+      "fallback_count": 0,
+      "fallback_entries": [],
+      "complex_fully_measured": true,
+      "zero_amplitude_upper_bound": 0.0,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": true
+    },
+    {
+      "name": "theta=1.57079632679,phi=-0.8",
+      "shape": [
+        2,
+        2
+      ],
+      "relative_error": 2.0180994620902502e-16,
+      "absolute_error": 2.220446049250313e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 1.4142135623730951,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            0.0,
+            -1.0000000000000002
+          ],
+          [
+            0.6967067093471655,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.7173560908995229,
+            0.0
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            4.266098207732457e-17,
+            -1.0
+          ],
+          [
+            0.6967067093471654,
+            6.123233995736766e-17
+          ]
+        ],
+        "imag": [
+          [
+            -4.3925392028447914e-17,
+            0.0
+          ],
+          [
+            -0.7173560908995228,
+            0.0
+          ]
+        ]
+      },
+      "theta": 1.5707963267948966,
+      "phi": -0.8,
+      "fallback_count": 2,
+      "fallback_entries": [
+        {
+          "output": 0,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        }
+      ],
+      "complex_fully_measured": false,
+      "zero_amplitude_upper_bound": 3.162277660168379e-07,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": false
+    },
+    {
+      "name": "theta=0.37,phi=2.4",
+      "shape": [
+        2,
+        2
+      ],
+      "relative_error": 1.884159955285778e-16,
+      "absolute_error": 2.332731988101855e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 1.4142135623730951,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            -0.6874923254771407,
+            -0.36161543196496204
+          ],
+          [
+            -0.2666529469736958,
+            0.9323273456060347
+          ]
+        ],
+        "imag": [
+          [
+            0.6297527941778642,
+            -2.0173693912146748e-17
+          ],
+          [
+            0.24425790981143158,
+            -7.150229861216425e-17
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            -0.6874923254771406,
+            -0.361615431964962
+          ],
+          [
+            -0.2666529469736958,
+            0.9323273456060345
+          ]
+        ],
+        "imag": [
+          [
+            0.6297527941778642,
+            0.0
+          ],
+          [
+            0.24425790981143156,
+            0.0
+          ]
+        ]
+      },
+      "theta": 0.37,
+      "phi": 2.4,
+      "fallback_count": 0,
+      "fallback_entries": [],
+      "complex_fully_measured": true,
+      "zero_amplitude_upper_bound": 0.0,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": true
+    }
+  ],
+  "passed": true,
+  "complete": false
+}

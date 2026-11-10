@@ -1,0 +1,296 @@
+{
+  "stage": "device_fde_local_convergence",
+  "timestamp": "2026-11-12T11:07:42+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "waveguide_length_um": 100.0,
+    "uniform_along_x": true
+  },
+  "solver": "MODE FDE 2D X normal, full-vector, explicit boundary",
+  "boundary": "metal",
+  "pml_layers": null,
+  "domain_um": {
+    "y": 3.0,
+    "z": 2.0
+  },
+  "outer_mesh_target_nm": 50.0,
+  "core_mesh_um": {
+    "y": 1.2,
+    "z": 0.8
+  },
+  "trial_modes": 10,
+  "steps_nm": [
+    10.0,
+    5.0,
+    2.5,
+    1.25
+  ],
+  "runs": [
+    {
+      "step_nm": 10.0,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.4452520854351882,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9837726362877555,
+      "overlap": null,
+      "power_coupling": null,
+      "overlap_raw": null,
+      "modes_found": 20,
+      "mode_candidates": [
+        {
+          "name": "FDE::data::mode1",
+          "neff": {
+            "real": 2.4452520854351882,
+            "imag": 0.0
+          },
+          "te_fraction": 0.9837726362877555
+        },
+        {
+          "name": "FDE::data::mode2",
+          "neff": {
+            "real": 1.7723515425798009,
+            "imag": 0.0
+          },
+          "te_fraction": 0.044082675979365875
+        },
+        {
+          "name": "FDE::data::mode3",
+          "neff": {
+            "real": 1.494325492135764,
+            "imag": 0.0
+          },
+          "te_fraction": 0.6606634891111409
+        },
+        {
+          "name": "FDE::data::mode4",
+          "neff": {
+            "real": 1.3742572391879666,
+            "imag": 0.0
+          },
+          "te_fraction": 0.9950589888422284
+        },
+        {
+          "name": "FDE::data::mode5",
+          "neff": {
+            "real": 1.3705174269853968,
+            "imag": 0.0
+          },
+          "te_fraction": 0.03045576442266815
+        },
+        {
+          "name": "FDE::data::mode6",
+          "neff": {
+            "real": 1.3700869573310233,
+            "imag": 0.0
+          },
+          "te_fraction": 0.42801896139786805
+        },
+        {
+          "name": "FDE::data::mode7",
+          "neff": {
+            "real": 1.358440231981158,
+            "imag": 0.0
+          },
+          "te_fraction": 0.005199863911916095
+        },
+        {
+          "name": "FDE::data::mode8",
+          "neff": {
+            "real": 1.3256128827443832,
+            "imag": 0.0
+          },
+          "te_fraction": 0.6910567648565172
+        },
+        {
+          "name": "FDE::data::mode9",
+          "neff": {
+            "real": 1.2948510963385278,
+            "imag": 0.0
+          },
+          "te_fraction": 0.034410236780902964
+        },
+        {
+          "name": "FDE::data::mode10",
+          "neff": {
+            "real": 1.2392780490853181,
+            "imag": 0.0
+          },
+          "te_fraction": 0.8875847476336587
+        }
+      ],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 163,
+        "cells_z": 111,
+        "min_dy_nm": 9.999999999999057,
+        "max_dy_nm": 50.00000000000037,
+        "min_dz_nm": 9.999999999999481,
+        "max_dz_nm": 50.00000000000037
+      },
+      "reference_dcard": "ref_step_0"
+    },
+    {
+      "step_nm": 5.0,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.4456570441773566,
+        "imag": 0.0
+      },
+      "te_fraction": 0.983619587590194,
+      "overlap": 0.9994084493081378,
+      "power_coupling": 0.9994084489112829,
+      "overlap_raw": [
+        0.9994084493081378,
+        0.9994084489112829
+      ],
+      "modes_found": 20,
+      "mode_candidates": [],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 287,
+        "cells_z": 195,
+        "min_dy_nm": 4.99999999999847,
+        "max_dy_nm": 50.00000000000164,
+        "min_dz_nm": 4.999999999999317,
+        "max_dz_nm": 50.00000000000037
+      },
+      "reference_dcard": "ref_step_1"
+    },
+    {
+      "step_nm": 2.5,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.445748091522251,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9835242986870604,
+      "overlap": 0.9998511523023252,
+      "power_coupling": 0.999851152252031,
+      "overlap_raw": [
+        0.9998511523023252,
+        0.999851152252031
+      ],
+      "modes_found": 20,
+      "mode_candidates": [],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 531,
+        "cells_z": 359,
+        "min_dy_nm": 2.4999999999935176,
+        "max_dy_nm": 50.00000000000672,
+        "min_dz_nm": 2.4999999999973292,
+        "max_dz_nm": 50.0000000000027
+      },
+      "reference_dcard": "ref_step_2"
+    },
+    {
+      "step_nm": 1.25,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.4457671489292943,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9834713606826972,
+      "overlap": 0.9999621895337362,
+      "power_coupling": 0.9999621895277636,
+      "overlap_raw": [
+        0.9999621895337362,
+        0.9999621895277636
+      ],
+      "modes_found": 20,
+      "mode_candidates": [],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 1015,
+        "cells_z": 683,
+        "min_dy_nm": 1.2499999999910942,
+        "max_dy_nm": 50.00000000000905,
+        "min_dz_nm": 1.2499999999948528,
+        "max_dz_nm": 50.00000000000502
+      },
+      "reference_dcard": "ref_step_3"
+    }
+  ],
+  "phase_checks": [
+    {
+      "from_step_nm": 10.0,
+      "to_step_nm": 5.0,
+      "finite": true,
+      "delta_neff": 0.0004049587421683931,
+      "delta_neff_real": 0.0004049587421683931,
+      "delta_neff_imag": 0.0,
+      "phase_delta_rad": 0.16415682701976608,
+      "power_loss_delta_db": 0.0,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.1639725720058434,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 5.0,
+      "to_step_nm": 2.5,
+      "finite": true,
+      "delta_neff": 9.10473448945126e-05,
+      "delta_neff_real": 9.10473448945126e-05,
+      "delta_neff_imag": 0.0,
+      "phase_delta_rad": 0.03690757030315574,
+      "power_loss_delta_db": 0.0,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.03690547557456795,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 2.5,
+      "to_step_nm": 1.25,
+      "finite": true,
+      "delta_neff": 1.905740704311043e-05,
+      "delta_neff_real": 1.905740704311043e-05,
+      "delta_neff_imag": 0.0,
+      "phase_delta_rad": 0.0077252399952394985,
+      "power_loss_delta_db": 0.0,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.007725220785484452,
+      "phase_converged": true
+    }
+  ],
+  "last_two_phase_checks": [
+    {
+      "from_step_nm": 5.0,
+      "to_step_nm": 2.5,
+      "finite": true,
+      "delta_neff": 9.10473448945126e-05,
+      "delta_neff_real": 9.10473448945126e-05,
+      "delta_neff_imag": 0.0,
+      "phase_delta_rad": 0.03690757030315574,
+      "power_loss_delta_db": 0.0,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.03690547557456795,
+      "phase_converged": false
+    },
+    {
+      "from_step_nm": 2.5,
+      "to_step_nm": 1.25,
+      "finite": true,
+      "delta_neff": 1.905740704311043e-05,
+      "delta_neff_real": 1.905740704311043e-05,
+      "delta_neff_imag": 0.0,
+      "phase_delta_rad": 0.0077252399952394985,
+      "power_loss_delta_db": 0.0,
+      "phase_limit_rad": 0.01,
+      "s21_delta_abs": 0.007725220785484452,
+      "phase_converged": true
+    }
+  ],
+  "phase_limit_rad": 0.01,
+  "mode_identity_valid": true,
+  "phase_mesh_converged": false,
+  "domain_converged": null,
+  "boundary_checked": null,
+  "loss_check_status": "all_imag_neff_zero",
+  "complete": false,
+  "complete_scope": "single domain/boundary; domain and boundary scans required",
+  "limitation": "Uniform strip only; not a coupler/MZI or wafer cross-section."
+}

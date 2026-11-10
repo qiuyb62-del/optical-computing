@@ -1,0 +1,73 @@
+Checked out feature at start: 'eme_engine'
+Checked out HPC license feature: 'eme_engine'
+Checked in feature: 'HPC_PARALLEL'
+Ansys Lumerical 2025 R2 Eigenmode Expansion Solver Version 7.26.4175 (Windows 64bit)
+ expires (month/day/year): 12/31/2035
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 1055@localhost
+current time: 周一 11月 16 15:39:32 2026
+Running on host: DESKTOP-NDH842O
+All processes are communicating and ready to proceed to simulation...
+Detected 4 processes on 1 host
+This process is the local leader
+Running lms file: D:\Program Files\Ansys Inc\v252\Lumerical\bin\eme-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFeU9BbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ2s5ZmJuWmZVbWhHYVZGNVZIcDJSVFV3T0ZjMldUQk5kbkp2YmpWZlprTkNRa2hQUzJWRVduRjFSbmgzTTA0NFFrUlNRazV2VjA5VlJHYzBSRGxtTkdWSE5UUk9ZMUJsZUZGb01tYzNOM0JVWTNoRmNWcEpRMjU2UlhsUlMzSmhTVjgzTkZsQmNFbHVWRXRVVG1nd1JUSmpRV050T0doVFUyeFJSeTEyWlU5dFpWRk5MVzl5VFZFMVdUZElhbVJLZUUxSGJGOU9TMFZOTUdvM1ZIRjBWR2h4WW1aTFVYVlhRMWR1ZERsWmRqaEJaa3BpUTNWWmJFdDBiVWRxVUZOM05qZGtVWGRMV0V4V2RFVXlUMU5UYUU5SFZsZERZemw2YUhNdGIyZG9ORkZ0UmkxcVMybGlVSEYxUVZsVVVrbGlZbEJpVFMxUlRUaHVhbmR4VjFKcmFrSlZUWGxKYkRWWk1XeEpORE5wZWtsQmFqZzVkM0YzYkVkb1ZFVXpOVzFSYXpOZlVtbFNiemxDVXpKbVp6TldjVlJGZHpKRlJuVmxPRjh5VTBSZlZWaDBNMkpMU21reGVGRXhNbUpSVTA5RVdYSXpUV3BUVUZwMllreHRSWGsyUWpNS1BDOU5VMGMtQ2c8L0RBVEE+PC9BTlNZU19MSUNFTlNJTkdfQ09OVEVYVF9EQVRBPgpBTlNZU19MSUNFTlNJTkdfV09SS0ZMT1dfU0VTU0lPTj08REFUQT48SUQ+REVTS1RPUC1OREg4NDJPX2hmZF8yNTI8L0lEPjwvREFUQT4K C:/Users/hfd/Documents/deepseek-harness/default-workspace/optical-computing-git/progress/07_lumerical/round5/eme_matched_2p5/eme_L10.1um.lms
+Sharing project file with 3 peer processes on this host
+All processes are communicating and ready to proceed to simulation...
+Running MODE Simulation
+Starting simulation
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+All processes are communicating and ready to proceed to simulation...
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.015625 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+EME simulation time (s): 218.365289
+Number of processes: 4
+Warning: Number of processes in resource configuration exceeded number of EME cells. Only 1 processes used in simulation.
+Time to normalize fields and orthogonalize degenerate modes:  4.057452
+Time to calculate modes: 38.541179
+Time to calculate overlaps: 175.765176
+Total communication time: 0.428296
+Peak memory used by the engine: 2040117 kB
+Simulation completed successfully at: 周一 11月 16 15:43:14 2026
+Overall EME run time (s): 222.942

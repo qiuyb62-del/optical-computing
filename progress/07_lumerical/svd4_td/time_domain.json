@@ -1,0 +1,377 @@
+{
+  "stage": "lumerical_svd4_time_domain",
+  "timestamp": "2026-11-10T23:42:40+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "seed": 20261110,
+  "label": "coherent I/Q time-domain validation, not intensity detection",
+  "frequency_matrix_relative_error": 1.5956829830285585e-15,
+  "recovery_scale": 5.091462700506127,
+  "input_encoding": "x/g at four amplitude/phase encoders; g=max(1,max|x|)",
+  "receiver": "one common CW; 0/pi2 LO hybrid; balanced subtraction of PD powers",
+  "receiver_details": {
+    "cw_power_w": 1.0,
+    "cw_frequency_hz": 193100000000000.0,
+    "cw_linewidth_hz": 0.0,
+    "sample_rate_gsa_s": 200.0,
+    "time_window_ns": 5.0,
+    "settle_window_ns": 1.0,
+    "settle_samples": 200,
+    "photodetector_responsivity_a_w": 1.0,
+    "lo_phase_reference_rad": 0.0,
+    "lo_phase_quadrature_rad": 1.5707963267948966,
+    "balanced_iq_formula": "I=-(P_Q+ - P_Q-)/2, Q=(P_I+ - P_I-)/2 with unit LO",
+    "phase_alignment": "fixed 0/pi2 LO reference; no per-sample phase fitting",
+    "fork_note": "INTERCONNECT Fork 1xN is an ideal coherent field copy, not a physical 1/N splitter"
+  },
+  "frequency_matrix_passed": true,
+  "records": [
+    {
+      "index": 0,
+      "x": {
+        "real": [
+          0.8,
+          -0.5,
+          0.3,
+          -0.0
+        ],
+        "imag": [
+          0.0,
+          0.0,
+          0.4,
+          -0.2
+        ]
+      },
+      "encoding_scale_g": 1.0,
+      "measured_optical_output": {
+        "real": [
+          -0.08157663723491085,
+          0.260416529448981,
+          -0.13662327751694897,
+          -0.11924143277326227
+        ],
+        "imag": [
+          0.10363708775418246,
+          0.11755309070045658,
+          0.1995959159716222,
+          -0.5952940304558577
+        ]
+      },
+      "expected_optical_Hx": {
+        "real": [
+          -0.08157663723491071,
+          0.260416529448981,
+          -0.13662327751694914,
+          -0.11924143277326232
+        ],
+        "imag": [
+          0.10363708775418237,
+          0.11755309070045669,
+          0.19959591597162218,
+          -0.5952940304558578
+        ]
+      },
+      "expected_restored_Wx": {
+        "real": [
+          -0.4153444057142677,
+          1.3259010462847398,
+          -0.6956123214984451,
+          -0.6071133073199707
+        ],
+        "imag": [
+          0.5276643666894996,
+          0.5985171766305892,
+          1.0162351613428673,
+          -3.0309173518999586
+        ]
+      },
+      "optical_relative_error": 3.958184845663215e-16,
+      "optical_absolute_error": 1.6883057536160646e-16,
+      "restored_output_sg_y": {
+        "real": [
+          -0.41534440571426784,
+          1.3259010462847423,
+          -0.695612321498443,
+          -0.6071133073199737
+        ],
+        "imag": [
+          0.5276643666895002,
+          0.5985171766305883,
+          1.0162351613428695,
+          -3.0309173518999577
+        ]
+      },
+      "restored_relative_error": 1.3907653453984353e-15,
+      "restored_absolute_error": 3.1264164235997256e-15,
+      "checks": {
+        "optical_Hx": {
+          "criterion": "relative",
+          "relative_error": 3.958184845663215e-16,
+          "absolute_error": 1.6883057536160646e-16,
+          "limit": 1e-06,
+          "scale": 1.3104967460436818,
+          "passed": true
+        },
+        "restored_Wx": {
+          "criterion": "relative",
+          "relative_error": 1.3907653453984353e-15,
+          "absolute_error": 3.1264164235997256e-15,
+          "limit": 1e-06,
+          "scale": 6.672345301616049,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "index": 1,
+      "x": {
+        "real": [
+          0.0,
+          -1.0,
+          0.5,
+          0.0
+        ],
+        "imag": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "encoding_scale_g": 1.0,
+      "measured_optical_output": {
+        "real": [
+          -0.11804023139233064,
+          0.499757921627058,
+          0.1267569879581852,
+          0.7209701629135561
+        ],
+        "imag": [
+          0.010113178435707387,
+          0.4122236014843562,
+          0.2860652038926823,
+          -0.3916989804743194
+        ]
+      },
+      "expected_optical_Hx": {
+        "real": [
+          -0.11804023139233058,
+          0.49975792162705795,
+          0.12675698795818538,
+          0.7209701629135561
+        ],
+        "imag": [
+          0.010113178435707193,
+          0.41222360148435666,
+          0.28606520389268236,
+          -0.3916989804743195
+        ]
+      },
+      "expected_restored_Wx": {
+        "real": [
+          -0.600997435293164,
+          2.5444988172466236,
+          0.6453784762176011,
+          3.6707926926521957
+        ],
+        "imag": [
+          0.05149087078896597,
+          2.098821091225905,
+          1.45649031553227,
+          -1.9943207489112715
+        ]
+      },
+      "optical_relative_error": 4.857324917713167e-16,
+      "optical_absolute_error": 4.47545209131181e-16,
+      "restored_output_sg_y": {
+        "real": [
+          -0.6009974352931639,
+          2.54449881724663,
+          0.6453784762176042,
+          3.6707926926521965
+        ],
+        "imag": [
+          0.05149087078896706,
+          2.0988210912259015,
+          1.4564903155322722,
+          -1.9943207489112749
+        ]
+      },
+      "restored_relative_error": 1.5899030099923377e-15,
+      "restored_absolute_error": 7.160723346098895e-15,
+      "checks": {
+        "optical_Hx": {
+          "criterion": "relative",
+          "relative_error": 4.857324917713167e-16,
+          "absolute_error": 4.47545209131181e-16,
+          "limit": 1e-06,
+          "scale": 1.8096150618692377,
+          "passed": true
+        },
+        "restored_Wx": {
+          "criterion": "relative",
+          "relative_error": 1.5899030099923377e-15,
+          "absolute_error": 7.160723346098895e-15,
+          "limit": 1e-06,
+          "scale": 9.213587589781302,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "index": 2,
+      "x": {
+        "real": [
+          2.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "imag": [
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      "encoding_scale_g": 2.0,
+      "measured_optical_output": {
+        "real": [
+          -0.06193012558939481,
+          0.36359874821903077,
+          -0.13604438826760176,
+          -0.1463844417759655
+        ],
+        "imag": [
+          0.07081267300495439,
+          0.031133135884302943,
+          0.08849752510719536,
+          -0.7174607552375218
+        ]
+      },
+      "expected_optical_Hx": {
+        "real": [
+          -0.061930125589394744,
+          0.3635987482190305,
+          -0.13604438826760182,
+          -0.14638444177596582
+        ],
+        "imag": [
+          0.07081267300495435,
+          0.031133135884302998,
+          0.08849752510719544,
+          -0.7174607552375216
+        ]
+      },
+      "expected_restored_Wx": {
+        "real": [
+          -0.6306298489521278,
+          3.7024989290158192,
+          -1.3853298569553372,
+          -1.4906218504734738
+        ],
+        "imag": [
+          0.721080166655724,
+          0.3170264002094376,
+          0.9011636963407774,
+          -7.305849348737594
+        ]
+      },
+      "optical_relative_error": 6.038720401464057e-16,
+      "optical_absolute_error": 4.0029660424867215e-16,
+      "restored_output_sg_y": {
+        "real": [
+          -0.6306298489521274,
+          3.7024989290158272,
+          -1.3853298569553354,
+          -1.4906218504734783
+        ],
+        "imag": [
+          0.7210801666557248,
+          0.3170264002094345,
+          0.9011636963407793,
+          -7.305849348737596
+        ]
+      },
+      "restored_relative_error": 1.2153117672506625e-15,
+      "restored_absolute_error": 8.576787243010016e-15,
+      "checks": {
+        "optical_Hx": {
+          "criterion": "relative",
+          "relative_error": 6.038720401464057e-16,
+          "absolute_error": 4.0029660424867215e-16,
+          "limit": 1e-06,
+          "scale": 1.3821163332913295,
+          "passed": true
+        },
+        "restored_Wx": {
+          "criterion": "relative",
+          "relative_error": 1.2153117672506625e-15,
+          "absolute_error": 8.576787243010016e-15,
+          "limit": 1e-06,
+          "scale": 14.073987517426183,
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  ],
+  "record_checks": [
+    {
+      "optical_Hx": {
+        "criterion": "relative",
+        "relative_error": 3.958184845663215e-16,
+        "absolute_error": 1.6883057536160646e-16,
+        "limit": 1e-06,
+        "scale": 1.3104967460436818,
+        "passed": true
+      },
+      "restored_Wx": {
+        "criterion": "relative",
+        "relative_error": 1.3907653453984353e-15,
+        "absolute_error": 3.1264164235997256e-15,
+        "limit": 1e-06,
+        "scale": 6.672345301616049,
+        "passed": true
+      }
+    },
+    {
+      "optical_Hx": {
+        "criterion": "relative",
+        "relative_error": 4.857324917713167e-16,
+        "absolute_error": 4.47545209131181e-16,
+        "limit": 1e-06,
+        "scale": 1.8096150618692377,
+        "passed": true
+      },
+      "restored_Wx": {
+        "criterion": "relative",
+        "relative_error": 1.5899030099923377e-15,
+        "absolute_error": 7.160723346098895e-15,
+        "limit": 1e-06,
+        "scale": 9.213587589781302,
+        "passed": true
+      }
+    },
+    {
+      "optical_Hx": {
+        "criterion": "relative",
+        "relative_error": 6.038720401464057e-16,
+        "absolute_error": 4.0029660424867215e-16,
+        "limit": 1e-06,
+        "scale": 1.3821163332913295,
+        "passed": true
+      },
+      "restored_Wx": {
+        "criterion": "relative",
+        "relative_error": 1.2153117672506625e-15,
+        "absolute_error": 8.576787243010016e-15,
+        "limit": 1e-06,
+        "scale": 14.073987517426183,
+        "passed": true
+      }
+    }
+  ],
+  "passed": true
+}

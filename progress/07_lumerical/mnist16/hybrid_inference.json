@@ -1,0 +1,20 @@
+{
+  "stage": "lumerical_mnist16_hybrid",
+  "label": "Lumerical transmission-matrix-extracted hybrid inference",
+  "seed": 20261109,
+  "model_file": "progress/06_mnist/models/seed_20261109.json",
+  "circuit_file": "seed_20261109.icp",
+  "test_samples": 10000,
+  "lumerical_matrix_relative_error": 5.680135302876858e-15,
+  "lumerical_matrix_absolute_error": 2.2008414477464676e-15,
+  "recovery_scale": 3.765749296801341,
+  "digital_accuracy": 0.9199,
+  "lumerical_hybrid_accuracy": 0.9199,
+  "saved_python_ideal_accuracy": 0.9199,
+  "prediction_agreement_with_saved_ideal": 1.0,
+  "prediction_agreement_with_digital": 1.0,
+  "linear_relative_error": 5.618751497968551e-15,
+  "imaginary_leakage_ratio": 3.121705847089859e-15,
+  "logit_max_absolute_error": 2.0605739337042905e-13,
+  "note": "H was extracted from one Lumerical circuit; the 10,000 test images were not each simulated in Lumerical."
+}

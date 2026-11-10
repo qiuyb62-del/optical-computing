@@ -1,0 +1,89 @@
+{
+  "stage": "device_fde_local_convergence",
+  "timestamp": "2026-11-12T11:42:20+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "waveguide_length_um": 100.0,
+    "uniform_along_x": true
+  },
+  "solver": "MODE FDE 2D X normal, full-vector, explicit boundary",
+  "boundary": "pml",
+  "pml_layers": 24,
+  "domain_um": {
+    "y": 5.0,
+    "z": 4.0
+  },
+  "outer_mesh_target_nm": 50.0,
+  "core_mesh_um": {
+    "y": 1.2,
+    "z": 0.8
+  },
+  "trial_modes": 10,
+  "steps_nm": [
+    2.5
+  ],
+  "runs": [
+    {
+      "step_nm": 2.5,
+      "selected_mode": "FDE::data::mode1",
+      "neff": {
+        "real": 2.445748359991149,
+        "imag": -3.1272141442924153e-17
+      },
+      "te_fraction": 0.9835243696990466,
+      "overlap": null,
+      "power_coupling": null,
+      "overlap_raw": null,
+      "modes_found": 3,
+      "mode_candidates": [
+        {
+          "name": "FDE::data::mode1",
+          "neff": {
+            "real": 2.445748359991149,
+            "imag": -3.1272141442924153e-17
+          },
+          "te_fraction": 0.9835243696990466
+        },
+        {
+          "name": "FDE::data::mode2",
+          "neff": {
+            "real": 1.7706676618800796,
+            "imag": 3.762939088037193e-15
+          },
+          "te_fraction": 0.04429921679075557
+        },
+        {
+          "name": "FDE::data::mode3",
+          "neff": {
+            "real": 1.4927812789158976,
+            "imag": -4.881642637462452e-09
+          },
+          "te_fraction": 0.6962785827473061
+        }
+      ],
+      "mesh": {
+        "file": "mesh_material.npz",
+        "cells_y": 617,
+        "cells_z": 445,
+        "min_dy_nm": 2.4999999999935176,
+        "max_dy_nm": 50.000000000006615,
+        "min_dz_nm": 2.4999999999973292,
+        "max_dz_nm": 50.0000000000027
+      },
+      "reference_dcard": "ref_step_0"
+    }
+  ],
+  "phase_checks": [],
+  "last_two_phase_checks": [],
+  "phase_limit_rad": 0.01,
+  "mode_identity_valid": false,
+  "phase_mesh_converged": false,
+  "domain_converged": null,
+  "boundary_checked": null,
+  "loss_check_status": "imag_neff_nonzero",
+  "complete": false,
+  "complete_scope": "single domain/boundary; domain and boundary scans required",
+  "limitation": "Uniform strip only; not a coupler/MZI or wafer cross-section."
+}

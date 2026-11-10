@@ -1,0 +1,18 @@
+{
+  "stage": "device_eme_minimal",
+  "timestamp": "2026-11-12T09:58:20+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "status": "layout_only",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "length_um": 10.0
+  },
+  "solver": "MODE EME 3D: X Prop, one uniform cell, PML 16",
+  "ports": [
+    "EME::Ports::port_1",
+    "EME::Ports::port_2"
+  ],
+  "complete": false,
+  "valid_s_parameters": false
+}

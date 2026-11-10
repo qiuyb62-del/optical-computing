@@ -1,0 +1,60 @@
+{
+  "step_nm": 2.5,
+  "selected_mode": "FDE::data::mode1",
+  "neff": {
+    "real": 2.4457480915222574,
+    "imag": 0.0
+  },
+  "te_fraction": 0.9835242986870605,
+  "overlap": null,
+  "power_coupling": null,
+  "overlap_raw": null,
+  "modes_found": 4,
+  "trial_modes_requested": 4,
+  "trial_modes_actual": 4,
+  "mode_candidates": [
+    {
+      "name": "FDE::data::mode1",
+      "neff": {
+        "real": 2.4457480915222574,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9835242986870605
+    },
+    {
+      "name": "FDE::data::mode2",
+      "neff": {
+        "real": 1.7709019721553791,
+        "imag": 0.0
+      },
+      "te_fraction": 0.04411676786187945
+    },
+    {
+      "name": "FDE::data::mode3",
+      "neff": {
+        "real": 1.493732775470322,
+        "imag": 0.0
+      },
+      "te_fraction": 0.6600800414593172
+    },
+    {
+      "name": "FDE::data::mode4",
+      "neff": {
+        "real": 1.37424906919892,
+        "imag": 0.0
+      },
+      "te_fraction": 0.9950384407040681
+    }
+  ],
+  "mesh": {
+    "file": "mesh_material.npz",
+    "cells_y": 531,
+    "cells_z": 359,
+    "min_dy_nm": 2.4999999999935176,
+    "max_dy_nm": 50.00000000000672,
+    "min_dz_nm": 2.4999999999973292,
+    "max_dz_nm": 50.0000000000027
+  },
+  "reference_dcard": "ref_step_0",
+  "status": "solved"
+}

@@ -1,0 +1,174 @@
+{
+  "stage": "device_fdtd_slab_diagnostic",
+  "status": "2D z-invariant slab diagnostic; not a strip-waveguide validation",
+  "criteria_version": "strict_pointwise_T_le_1_and_three_mesh_power_ratio_v1",
+  "code_commit": "working-tree",
+  "timestamp": "2026-11-12T09:28:02+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "simulated_geometry": {
+    "dimension": "2D (z invariant)",
+    "si_width_y_um": 0.5,
+    "si_thickness_z": "infinite (z invariant)",
+    "si_length_x_um": 16.0,
+    "domain_x_um": 12.0,
+    "note": "z span is deliberately 0; this cannot represent 220 nm thickness"
+  },
+  "intended_target": "0.5 x 0.22 um SOI strip waveguide",
+  "geometry_valid_for_strip": false,
+  "diagnostic_only": true,
+  "monitor_definition": "dimensionless T_net_ratio = output_flux_normalized / input_flux_normalized at x=+/-3 um",
+  "meshes": [
+    2,
+    3,
+    4
+  ],
+  "runs": {
+    "2": {
+      "wavelength_um": [
+        1.56,
+        1.557487922705314,
+        1.554983922829582,
+        1.5524879614767255,
+        1.55
+      ],
+      "input_flux_normalized": [
+        1.0000591703422683,
+        1.0000366128480471,
+        1.0000142973854402,
+        0.9999922245828756,
+        0.9999703949240304
+      ],
+      "output_flux_normalized": [
+        1.000053706614875,
+        1.000034166754707,
+        1.0000140324463926,
+        0.999993374391388,
+        0.999972271388457
+      ],
+      "T_net_ratio": [
+        0.9999945365958781,
+        0.999997553996215,
+        0.9999997350647403,
+        1.0000011498174528,
+        1.0000018765199812
+      ],
+      "normalization": "dimensionless source-normalized net flux; not watts",
+      "source_neff": {
+        "real": 3.148118286721006,
+        "imag": 0.0
+      },
+      "pml_layers": 16,
+      "simulation_time_s": 1e-11,
+      "auto_shutoff": 1e-09
+    },
+    "3": {
+      "wavelength_um": [
+        1.56,
+        1.557487922705314,
+        1.554983922829582,
+        1.5524879614767255,
+        1.55
+      ],
+      "input_flux_normalized": [
+        1.0000369717169222,
+        1.0000209546578949,
+        1.0000050688058464,
+        0.9999893180517742,
+        0.9999737072569586
+      ],
+      "output_flux_normalized": [
+        1.0000233220564845,
+        1.0000129141727638,
+        1.000001992144092,
+        0.9999905724609084,
+        0.9999786778261087
+      ],
+      "T_net_ratio": [
+        0.9999863508441951,
+        0.9999919596833511,
+        0.9999969233538405,
+        1.0000012544225338,
+        1.0000049706998435
+      ],
+      "normalization": "dimensionless source-normalized net flux; not watts",
+      "source_neff": {
+        "real": 3.1535122449437307,
+        "imag": 0.0
+      },
+      "pml_layers": 16,
+      "simulation_time_s": 1e-11,
+      "auto_shutoff": 1e-09
+    },
+    "4": {
+      "wavelength_um": [
+        1.56,
+        1.557487922705314,
+        1.554983922829582,
+        1.5524879614767255,
+        1.55
+      ],
+      "input_flux_normalized": [
+        1.0000224584664736,
+        1.000012202432347,
+        1.0000020634222566,
+        0.9999920418875478,
+        0.9999821382720241
+      ],
+      "output_flux_normalized": [
+        1.0000146317472116,
+        1.0000079408566367,
+        1.0000008467908374,
+        0.9999933585732527,
+        0.9999854893091545
+      ],
+      "T_net_ratio": [
+        0.9999921734565101,
+        0.9999957384762906,
+        0.9999987833710913,
+        1.0000013166961834,
+        1.0000033510969868
+      ],
+      "normalization": "dimensionless source-normalized net flux; not watts",
+      "source_neff": {
+        "real": 3.1528063053843396,
+        "imag": 0.0
+      },
+      "pml_layers": 16,
+      "simulation_time_s": 1e-11,
+      "auto_shutoff": 1e-09
+    }
+  },
+  "max_T_all": 1.0000049706998435,
+  "strict_passivity": {
+    "passed": false,
+    "reason": "non-finite, negative, or above upper bound",
+    "max": 1.0000049706998435,
+    "min": 0.9999863508441951,
+    "upper": 1.0,
+    "count": 15
+  },
+  "raw_passive": false,
+  "mesh_pairwise_delta": [
+    {
+      "from": 2,
+      "to": 3,
+      "max_abs_delta_T": 8.18575168304303e-06
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "max_abs_delta_T": 5.822612315076192e-06
+    }
+  ],
+  "power_ratio_mesh_converged": true,
+  "mesh_converged": true,
+  "phase_converged": null,
+  "pml_domain_converged": null,
+  "time_converged": null,
+  "mode_identity_valid": null,
+  "power_mesh_checks_passed": false,
+  "complete": false,
+  "slab_diagnostic_complete": false,
+  "slab_diagnostic_complete_reason": "PML, time, mode identity and complex S21 checks are not all measured",
+  "limitation": "A converged slab diagnostic still does not validate a 500x220 nm strip waveguide."
+}

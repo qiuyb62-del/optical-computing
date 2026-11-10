@@ -1,0 +1,208 @@
+{
+  "stage": "device_eme_minimal",
+  "timestamp": "2026-11-12T11:48:30+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "solver": "MODE EME 3D: X Prop, one uniform cell",
+  "domain_um": {
+    "y": 4.0,
+    "z": 3.0
+  },
+  "cell_modes": 5,
+  "boundary": "pml",
+  "pml_layers": 16,
+  "core_step_nm": null,
+  "lengths_um": [
+    10.0,
+    10.1,
+    10.2
+  ],
+  "runs": [
+    {
+      "length_um": 10.0,
+      "domain_um": {
+        "y": 4.0,
+        "z": 3.0
+      },
+      "cell_modes": 5,
+      "boundary": "pml",
+      "pml_layers": 16,
+      "status": "nonzero_s_observed",
+      "complete": false,
+      "valid_s_parameters": false,
+      "ports": [
+        "EME::Ports::port_1",
+        "EME::Ports::port_2"
+      ],
+      "user_s_matrix_shape": [
+        2,
+        2
+      ],
+      "user_s_matrix": {
+        "real": [
+          [
+            0.0,
+            -0.1966888396264217
+          ],
+          [
+            -0.1966888396264217,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -0.9804659608402779
+          ],
+          [
+            -0.9804659608402779,
+            0.0
+          ]
+        ]
+      },
+      "user_s_matrix_max_abs": 1.0000000000000189,
+      "user_s_matrix_max_singular_value": 1.0000000000000189,
+      "unitarity_error": 3.752553823233029e-14,
+      "nonzero_s_observed": true,
+      "strict_raw_passive": false,
+      "candidate_lossless": true,
+      "note": "Candidate raw S only. Mode identity, mesh/domain convergence and length phase are separate checks."
+    },
+    {
+      "length_um": 10.1,
+      "domain_um": {
+        "y": 4.0,
+        "z": 3.0
+      },
+      "cell_modes": 5,
+      "boundary": "pml",
+      "pml_layers": 16,
+      "status": "nonzero_s_observed",
+      "complete": false,
+      "valid_s_parameters": false,
+      "ports": [
+        "EME::Ports::port_1",
+        "EME::Ports::port_2"
+      ],
+      "user_s_matrix_shape": [
+        2,
+        2
+      ],
+      "user_s_matrix": {
+        "real": [
+          [
+            0.0,
+            0.710101425746219
+          ],
+          [
+            0.710101425746219,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -0.7040994000517434
+          ],
+          [
+            -0.7040994000517434,
+            0.0
+          ]
+        ]
+      },
+      "user_s_matrix_max_abs": 1.000000000000019,
+      "user_s_matrix_max_singular_value": 1.000000000000019,
+      "unitarity_error": 3.7969627442180354e-14,
+      "nonzero_s_observed": true,
+      "strict_raw_passive": false,
+      "candidate_lossless": true,
+      "note": "Candidate raw S only. Mode identity, mesh/domain convergence and length phase are separate checks."
+    },
+    {
+      "length_um": 10.2,
+      "domain_um": {
+        "y": 4.0,
+        "z": 3.0
+      },
+      "cell_modes": 5,
+      "boundary": "pml",
+      "pml_layers": 16,
+      "status": "nonzero_s_observed",
+      "complete": false,
+      "valid_s_parameters": false,
+      "ports": [
+        "EME::Ports::port_1",
+        "EME::Ports::port_2"
+      ],
+      "user_s_matrix_shape": [
+        2,
+        2
+      ],
+      "user_s_matrix": {
+        "real": [
+          [
+            0.0,
+            0.9787611316494709
+          ],
+          [
+            0.9787611316494709,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.20500401745401278
+          ],
+          [
+            0.20500401745401278,
+            0.0
+          ]
+        ]
+      },
+      "user_s_matrix_max_abs": 1.000000000000019,
+      "user_s_matrix_max_singular_value": 1.000000000000019,
+      "unitarity_error": 3.7969627442180354e-14,
+      "nonzero_s_observed": true,
+      "strict_raw_passive": false,
+      "candidate_lossless": true,
+      "note": "Candidate raw S only. Mode identity, mesh/domain convergence and length phase are separate checks."
+    }
+  ],
+  "length_checks": [
+    {
+      "from_length_um": 10.0,
+      "to_length_um": 10.1,
+      "delta_length_um": 0.09999999999999964,
+      "s21_from": {
+        "real": -0.1966888396264217,
+        "imag": -0.9804659608402779
+      },
+      "s21_to": {
+        "real": 0.710101425746219,
+        "imag": -0.7040994000517434
+      },
+      "beta_from_length": 9876218.894780813,
+      "neff_from_length": 2.43636603705101,
+      "phase_converged": null
+    },
+    {
+      "from_length_um": 10.1,
+      "to_length_um": 10.2,
+      "delta_length_um": 0.09999999999999964,
+      "s21_from": {
+        "real": 0.710101425746219,
+        "imag": -0.7040994000517434
+      },
+      "s21_to": {
+        "real": 0.9787611316494709,
+        "imag": 0.20500401745401278
+      },
+      "beta_from_length": 9876218.894780813,
+      "neff_from_length": 2.43636603705101,
+      "phase_converged": null
+    }
+  ],
+  "complete": false,
+  "complete_scope": "candidate S only; passivity/mode identity/convergence not accepted",
+  "note": "Do not use a nonzero 2x2 S as device acceptance."
+}

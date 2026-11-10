@@ -1,0 +1,58 @@
+{
+  "stage": "device_eme_minimal",
+  "timestamp": "2026-11-18T19:28:00+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "solver": "MODE EME 3D: X Prop, one uniform cell",
+  "domain_um": {
+    "y": 5.0,
+    "z": 4.0
+  },
+  "cell_modes": 5,
+  "boundary": "pml",
+  "pml_layers": 16,
+  "core_step_nm": 2.5,
+  "lengths_um": [
+    10.0
+  ],
+  "expected_runs": 1,
+  "completed_runs": 0,
+  "failed_runs": [],
+  "expected_length_checks": 0,
+  "computed_length_checks": 0,
+  "runs": [
+    {
+      "length_um": 10.0,
+      "domain_um": {
+        "y": 5.0,
+        "z": 4.0
+      },
+      "cell_modes": 5,
+      "boundary": "pml",
+      "pml_layers": 16,
+      "core_step_nm": 2.5,
+      "mesh_parameter_applied": true,
+      "mesh_matching_valid": false,
+      "mesh_export": {
+        "status": "not_run"
+      },
+      "boundary_applied": "PML",
+      "status": "layout_only",
+      "complete": false,
+      "valid_s_parameters": false,
+      "ports": [
+        "EME::Ports::port_1",
+        "EME::Ports::port_2"
+      ],
+      "pml_layers_requested": 16,
+      "pml_layers_actual": 16,
+      "boundary_requested": "pml",
+      "native_layout_saved": false,
+      "native_layout_reason": "core mesh makes .lms very large; raw JSON kept"
+    }
+  ],
+  "length_checks": [],
+  "flow_complete": false,
+  "complete": false,
+  "complete_scope": "candidate S only; passivity/mode identity/convergence not accepted",
+  "note": "Do not use a nonzero 2x2 S as device acceptance."
+}

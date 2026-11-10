@@ -1,0 +1,30 @@
+{
+  "step_nm": 1.25,
+  "selected_mode": "FDE::data::mode1",
+  "neff": {
+    "real": 2.445767148929294,
+    "imag": 0.0
+  },
+  "te_fraction": 0.9834713606826971,
+  "overlap": 0.9999621895337352,
+  "power_coupling": 0.9999621895277626,
+  "overlap_raw": [
+    0.9999621895337352,
+    0.9999621895277626
+  ],
+  "modes_found": 4,
+  "trial_modes_requested": 4,
+  "trial_modes_actual": 4,
+  "mode_candidates": [],
+  "mesh": {
+    "file": "mesh_material.npz",
+    "cells_y": 1015,
+    "cells_z": 683,
+    "min_dy_nm": 1.2499999999910942,
+    "max_dy_nm": 50.00000000000905,
+    "min_dz_nm": 1.2499999999948528,
+    "max_dz_nm": 50.00000000000502
+  },
+  "reference_dcard": "ref_step_1",
+  "status": "solved"
+}

@@ -1,0 +1,58 @@
+{
+  "length_um": 10.1,
+  "domain_um": {
+    "y": 5.0,
+    "z": 4.0
+  },
+  "cell_modes": 5,
+  "boundary": "pml",
+  "pml_layers": 16,
+  "core_step_nm": 2.5,
+  "mesh_matching_valid": false,
+  "boundary_applied": "pml_default",
+  "status": "nonzero_s_observed",
+  "complete": false,
+  "valid_s_parameters": false,
+  "ports": [
+    "EME::Ports::port_1",
+    "EME::Ports::port_2"
+  ],
+  "mesh_export": {
+    "status": "failed",
+    "error": "\"Can not find object 'material'\""
+  },
+  "user_s_matrix_shape": [
+    2,
+    2
+  ],
+  "user_s_matrix": {
+    "real": [
+      [
+        0.0,
+        0.9222163722734398
+      ],
+      [
+        0.9222163722734398,
+        0.0
+      ]
+    ],
+    "imag": [
+      [
+        0.0,
+        -0.3866742333161862
+      ],
+      [
+        -0.3866742333161862,
+        0.0
+      ]
+    ]
+  },
+  "user_s_matrix_max_abs": 0.9999999999999221,
+  "user_s_matrix_max_singular_value": 0.9999999999999221,
+  "unitarity_error": 1.559863349598345e-13,
+  "nonzero_s_observed": true,
+  "strict_raw_passive": true,
+  "candidate_lossless": true,
+  "note": "Candidate raw S only. Mode identity, mesh/domain convergence and length phase are separate checks.",
+  "mesh_parameter_applied": true
+}

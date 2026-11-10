@@ -1,0 +1,27 @@
+{
+  "stage": "device_fdtd_legacy_status",
+  "reviewed_commit": "585cbba63c237538c673c954e4e997703ed0ebc4",
+  "old_result": "device_fdtd.json",
+  "old_arrays_preserved": true,
+  "diagnostic_only": true,
+  "geometry_valid_for_strip": false,
+  "simulated_geometry": {
+    "dimension": "2D (z invariant)",
+    "si_width_y_um": 0.5,
+    "si_thickness_z": "infinite (z invariant)",
+    "si_length_x_um": 10.0,
+    "domain_x_um": 12.0,
+    "note": "z span is 0; this is not a 500 x 220 nm SOI strip waveguide"
+  },
+  "intended_target": "0.5 x 0.22 um SOI strip waveguide",
+  "max_T_all": 1.0754105634990518,
+  "max_T_fine": 1.0739166180935964,
+  "max_abs_T_change_mesh2_to_mesh3": 0.2778892012566162,
+  "raw_passive": false,
+  "mesh_converged": false,
+  "phase_converged": null,
+  "pml_domain_converged": null,
+  "time_converged": null,
+  "complete": false,
+  "reason": "The old 2D model is a z-invariant slab, has a facet inside the domain, and its T exceeds 1. It is retained only as historical diagnostic evidence."
+}

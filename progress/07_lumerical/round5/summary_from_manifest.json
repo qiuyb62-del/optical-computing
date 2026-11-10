@@ -1,0 +1,84 @@
+{
+  "manifest": "progress\\07_lumerical\\round5\\manifest.json",
+  "fde_mesh_phase_passed": false,
+  "fde_domain_checked": true,
+  "fde_boundary_checked": true,
+  "uniform_strip_fde_complete": false,
+  "eme_phase_mapping_passed": false,
+  "eme_strict_raw_passive": true,
+  "eme_device_complete": false,
+  "slab_diagnostic_complete": false,
+  "complete_scope": "manifest-defined uniform-strip numerical checks only",
+  "complete": false,
+  "evidence": {
+    "fde_mesh_checkpoints": [
+      "progress\\07_lumerical\\round5\\fde_low_modes\\step_2.5nm\\checkpoint.json",
+      "progress\\07_lumerical\\round5\\fde_low_modes\\step_1.25nm\\checkpoint.json"
+    ],
+    "eme_runs": [
+      "progress\\07_lumerical\\round5\\eme_matched_2p5\\eme_L10um.json",
+      "progress\\07_lumerical\\round5\\eme_matched_2p5\\eme_L10.1um.json"
+    ]
+  },
+  "unmeasured_or_failed": [
+    "FDE expected mesh steps incomplete",
+    "FDE last two continuous mesh intervals not both <=0.01 rad",
+    "EME all declared length intervals not both computable and <=0.01 rad",
+    "EME expected lengths incomplete"
+  ],
+  "fde_mesh_steps_nm": [
+    2.5,
+    1.25
+  ],
+  "fde_mode_identity_valid": true,
+  "fde_domain_values": [
+    2.445748091522251,
+    2.4457483599129337,
+    2.4457483599911534
+  ],
+  "fde_domain_phase_deltas": [
+    0.00010879667053490524,
+    3.170764995596131e-08
+  ],
+  "fde_boundary_values": {
+    "metal": 2.4457483599911534,
+    "pml16": 2.4457483599911685,
+    "pml24": 2.445748359991149
+  },
+  "fde_boundary_phase_deltas": {
+    "metal->pml16": 6.120646654569986e-12,
+    "pml16->pml24": 7.92083684709057e-12
+  },
+  "eme_lengths_completed": [
+    10.0,
+    10.1
+  ],
+  "eme_expected_lengths_um": [
+    10.0,
+    10.1,
+    10.2
+  ],
+  "eme_lengths_match_manifest": false,
+  "eme_flow_complete": false,
+  "eme_phase_checks": [
+    {
+      "from_length_um": 10.0,
+      "to_length_um": 10.1,
+      "phase_computable": true,
+      "s21_from": {
+        "real": 0.18133971001932986,
+        "imag": -0.983420515125625
+      },
+      "s21_to": {
+        "real": 0.9222163722734398,
+        "imag": -0.3866742333161862
+      },
+      "neff_from_length": 2.445748359991176,
+      "fde_neff": 2.4457483599911685,
+      "phase_vs_fde_100um_rad": 3.060323327284993e-12,
+      "phase_passed": true
+    }
+  ],
+  "eme_phase_checks_complete": false,
+  "eme_evidence_complete": false
+}

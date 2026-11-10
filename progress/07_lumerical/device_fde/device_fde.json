@@ -1,0 +1,134 @@
+{
+  "stage": "device_fde_waveguide",
+  "timestamp": "2026-11-10T23:07:58+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "geometry": {
+    "material": "Si (Silicon) - Palik on SiO2 (Glass) - Palik",
+    "width_um": 0.5,
+    "height_um": 0.22,
+    "length_um": 100.0
+  },
+  "solver": "MODE FDE, 2D X normal, fundamental TE, y/z span 3/2 um",
+  "wavelength_um": [
+    1.53,
+    1.5399999999999998,
+    1.55,
+    1.5599999999999998,
+    1.57
+  ],
+  "neff_coarse_60": [
+    {
+      "real": 2.4668632252583222,
+      "imag": 0.0,
+      "te_fraction": 0.9836857567670947
+    },
+    {
+      "real": 2.455395316191692,
+      "imag": 0.0,
+      "te_fraction": 0.9831703069778194
+    },
+    {
+      "real": 2.4438088350444565,
+      "imag": 0.0,
+      "te_fraction": 0.9826416905704951
+    },
+    {
+      "real": 2.4322104967415523,
+      "imag": 0.0,
+      "te_fraction": 0.9821016627572254
+    },
+    {
+      "real": 2.4206009060082105,
+      "imag": 0.0,
+      "te_fraction": 0.98155024561559
+    }
+  ],
+  "neff_fine_120": [
+    {
+      "real": 2.47114570067587,
+      "imag": 0.0,
+      "te_fraction": 0.9848491891927588
+    },
+    {
+      "real": 2.459682503487119,
+      "imag": 0.0,
+      "te_fraction": 0.98435710242111
+    },
+    {
+      "real": 2.4481005875388298,
+      "imag": 0.0,
+      "te_fraction": 0.9838519860038949
+    },
+    {
+      "real": 2.436507055394488,
+      "imag": 0.0,
+      "te_fraction": 0.9833355356287445
+    },
+    {
+      "real": 2.424902478657418,
+      "imag": 0.0,
+      "te_fraction": 0.982807753010239
+    }
+  ],
+  "neff_finer_480": [
+    {
+      "real": 2.468900331577833,
+      "imag": 0.0,
+      "te_fraction": 0.9846074231699886
+    },
+    {
+      "real": 2.457433495717944,
+      "imag": 0.0,
+      "te_fraction": 0.9841071987303663
+    },
+    {
+      "real": 2.445848107828172,
+      "imag": 0.0,
+      "te_fraction": 0.9835938586341356
+    },
+    {
+      "real": 2.4342512073508744,
+      "imag": 0.0,
+      "te_fraction": 0.983069115857591
+    },
+    {
+      "real": 2.4226433728443784,
+      "imag": 0.0,
+      "te_fraction": 0.9825329796496796
+    }
+  ],
+  "neff_1550": {
+    "real": 2.4458481078281697,
+    "imag": 0.0
+  },
+  "max_abs_neff_change_60_to_120": 0.004301572649207497,
+  "max_abs_neff_change_120_to_480": 0.0022591058130396746,
+  "neff_convergence_limit": 0.003,
+  "neff_converged": true,
+  "phase_convergence": {
+    "delta_neff": 0.0022524797106577843,
+    "phase_delta_rad": 0.9130804788854914,
+    "phase_limit_rad": 0.01,
+    "s21_delta_abs": 0.8816906580959605,
+    "phase_converged": false
+  },
+  "phase_converged": false,
+  "stage_status": "preliminary_phase_not_converged",
+  "complete": false,
+  "s21_from_fde": {
+    "real": 0.25606548643737753,
+    "imag": -0.9666594367488424
+  },
+  "s21_interconnect": {
+    "real": 0.2560654864372676,
+    "imag": -0.9666594367488716
+  },
+  "interconnect_frequency_hz": 193407822365591.4,
+  "interconnect_wavelength_um": 1.5500534276908087,
+  "s21_abs_error_plus_convention": 1.137243991218701e-13,
+  "s21_abs_error_minus_convention": 1.933318873497714,
+  "selected_phase_convention": "exp(+i 2 pi neff L / lambda)",
+  "selected_s21_abs_error": 1.137243991218701e-13,
+  "circuit_note": "INTERCONNECT Straight Waveguide configured with the same FDE neff; this checks parameter mapping, not an independent device solution.",
+  "fdtd_note": "See run_device_fdtd.py for the separate diagnostic; it is not used for a quantitative S-parameter."
+}

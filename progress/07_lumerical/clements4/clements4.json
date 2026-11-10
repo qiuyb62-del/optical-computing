@@ -1,0 +1,848 @@
+{
+  "stage": "lumerical_clements4",
+  "timestamp": "2026-11-10T23:39:06+0800",
+  "lumerical": "MAJORRELEASE=2025R2\nMINORRELEASE=0\nBUILDNUMBER=4175\nNUPKGNUMBER=9\nNUPKGSRCHASH=9c174f227f2178d520b805f03688fb9334ac4d9c",
+  "python": "3.13.1",
+  "numpy": "2.2.2",
+  "seed": 20261110,
+  "tol": 1e-06,
+  "cases": [
+    {
+      "name": "random_unitary",
+      "shape": [
+        4,
+        4
+      ],
+      "relative_error": 8.419853481072274e-16,
+      "absolute_error": 8.082545620880531e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 1.9999999999999998,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            -0.003954289908643901,
+            0.09819450106035758,
+            0.28014918529914873,
+            0.7484476560161146
+          ],
+          [
+            0.27166332228000656,
+            -0.7201025973111664,
+            -0.14451215287313646,
+            -0.14649422842928211
+          ],
+          [
+            -0.10063674438761885,
+            0.05045279976210628,
+            0.5324746446542254,
+            -0.23836582134504145
+          ],
+          [
+            -0.1575639941295897,
+            -0.018635185401305904,
+            -0.14991635460859803,
+            0.26982794851546077
+          ]
+        ],
+        "imag": [
+          [
+            0.12449849756813444,
+            0.18196769519467582,
+            0.5498787140977208,
+            -0.026571140812640566
+          ],
+          [
+            -0.012982002202617091,
+            -0.1665912408827861,
+            0.44351007386056557,
+            -0.3750794687083302
+          ],
+          [
+            -0.14760560272088277,
+            -0.6329074914283941,
+            0.3038660372838894,
+            0.36371056269332463
+          ],
+          [
+            -0.9239986007130062,
+            -0.08649021811125643,
+            -0.05679926602729223,
+            -0.12273611477487759
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            -0.003954289908643993,
+            0.09819450106035747,
+            0.28014918529914845,
+            0.7484476560161143
+          ],
+          [
+            0.2716633222800064,
+            -0.7201025973111657,
+            -0.14451215287313707,
+            -0.1464942284292819
+          ],
+          [
+            -0.10063674438761872,
+            0.05045279976210628,
+            0.5324746446542248,
+            -0.23836582134504164
+          ],
+          [
+            -0.15756399412958932,
+            -0.01863518540130579,
+            -0.14991635460859776,
+            0.2698279485154606
+          ]
+        ],
+        "imag": [
+          [
+            0.12449849756813441,
+            0.1819676951946757,
+            0.5498787140977208,
+            -0.026571140812640462
+          ],
+          [
+            -0.012982002202616891,
+            -0.16659124088278632,
+            0.4435100738605653,
+            -0.3750794687083304
+          ],
+          [
+            -0.14760560272088266,
+            -0.6329074914283936,
+            0.30386603728388983,
+            0.3637105626933244
+          ],
+          [
+            -0.923998600713006,
+            -0.08649021811125633,
+            -0.056799266027292405,
+            -0.12273611477487745
+          ]
+        ]
+      },
+      "size": 4,
+      "mzi_count": 6,
+      "output_phases": [
+        3.1061058885628814,
+        4.077780454947704,
+        2.387605972376912,
+        5.719523996334439
+      ],
+      "fallback_count": 0,
+      "fallback_entries": [],
+      "complex_fully_measured": true,
+      "zero_amplitude_upper_bound": 0.0,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": true
+    },
+    {
+      "name": "identity",
+      "shape": [
+        4,
+        4
+      ],
+      "relative_error": 3.8459253727671276e-16,
+      "absolute_error": 6.661338147750939e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 2.0,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            1.0000000000000002,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0000000000000002,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0000000000000007,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0000000000000002
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "size": 4,
+      "mzi_count": 6,
+      "output_phases": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fallback_count": 12,
+      "fallback_entries": [
+        {
+          "output": 1,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        }
+      ],
+      "complex_fully_measured": false,
+      "zero_amplitude_upper_bound": 3.162277660168379e-07,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": false
+    },
+    {
+      "name": "reversal_permutation",
+      "shape": [
+        4,
+        4
+      ],
+      "relative_error": 5.531665974674618e-16,
+      "absolute_error": 6.772974656777018e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 2.0,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0000000000000004
+          ],
+          [
+            0.0,
+            0.0,
+            1.0000000000000007,
+            0.0
+          ],
+          [
+            0.0,
+            1.0000000000000002,
+            0.0,
+            0.0
+          ],
+          [
+            1.0000000000000007,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            -1.224646799147354e-16
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -2.449293598294707e-16,
+            0.0,
+            0.0
+          ],
+          [
+            -1.224646799147354e-16,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "size": 4,
+      "mzi_count": 6,
+      "output_phases": [
+        3.141592653589793,
+        0.0,
+        0.0,
+        3.141592653589793
+      ],
+      "fallback_count": 12,
+      "fallback_entries": [
+        {
+          "output": 0,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        }
+      ],
+      "complex_fully_measured": false,
+      "zero_amplitude_upper_bound": 3.162277660168379e-07,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": false
+    },
+    {
+      "name": "diagonal_phases",
+      "shape": [
+        4,
+        4
+      ],
+      "relative_error": 4.0980616289968964e-16,
+      "absolute_error": 6.280369834735101e-16,
+      "criterion": "relative",
+      "limit": 1e-06,
+      "scale": 2.0,
+      "passed": true,
+      "H": {
+        "real": [
+          [
+            0.9800665778412418,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.4535961214255774,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -0.41614683654714285,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.9040721420170613
+          ]
+        ],
+        "imag": [
+          [
+            0.19866933079506127,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8912073600614359,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -0.9092974268256822,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.42737988023382983
+          ]
+        ]
+      },
+      "target": {
+        "real": [
+          [
+            0.9800665778412416,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.4535961214255773,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -0.4161468365471424,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.9040721420170612
+          ]
+        ],
+        "imag": [
+          [
+            0.19866933079506122,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8912073600614354,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -0.9092974268256817,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.4273798802338298
+          ]
+        ]
+      },
+      "size": 4,
+      "mzi_count": 6,
+      "output_phases": [
+        0.2,
+        2.7,
+        2.7,
+        2.7
+      ],
+      "fallback_count": 12,
+      "fallback_entries": [
+        {
+          "output": 1,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 0,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 1,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 3,
+          "input": 2,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 0,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 1,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        },
+        {
+          "output": 2,
+          "input": 3,
+          "power_w": 1e-13,
+          "power_limit_w": 1e-12,
+          "amplitude_upper_bound": 3.162277660168379e-07,
+          "status": "below_detection_limit"
+        }
+      ],
+      "complex_fully_measured": false,
+      "zero_amplitude_upper_bound": 3.162277660168379e-07,
+      "power_limit_w": 1e-12,
+      "power_meter_sensitivity_w": 1e-13,
+      "complete": false
+    }
+  ],
+  "passed": true,
+  "complete": false
+}

@@ -1,0 +1,50 @@
+{
+  "length_um": 10.0,
+  "domain_um": {
+    "y": 4.0,
+    "z": 3.0
+  },
+  "cell_modes": 5,
+  "boundary": "pml",
+  "pml_layers": 16,
+  "status": "nonzero_s_observed",
+  "complete": false,
+  "valid_s_parameters": false,
+  "ports": [
+    "EME::Ports::port_1",
+    "EME::Ports::port_2"
+  ],
+  "user_s_matrix_shape": [
+    2,
+    2
+  ],
+  "user_s_matrix": {
+    "real": [
+      [
+        0.0,
+        -0.1966888396264217
+      ],
+      [
+        -0.1966888396264217,
+        0.0
+      ]
+    ],
+    "imag": [
+      [
+        0.0,
+        -0.9804659608402779
+      ],
+      [
+        -0.9804659608402779,
+        0.0
+      ]
+    ]
+  },
+  "user_s_matrix_max_abs": 1.0000000000000189,
+  "user_s_matrix_max_singular_value": 1.0000000000000189,
+  "unitarity_error": 3.752553823233029e-14,
+  "nonzero_s_observed": true,
+  "strict_raw_passive": false,
+  "candidate_lossless": true,
+  "note": "Candidate raw S only. Mode identity, mesh/domain convergence and length phase are separate checks."
+}

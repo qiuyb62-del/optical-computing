@@ -1,0 +1,29 @@
+{
+  "length_um": 10.0,
+  "domain_um": {
+    "y": 5.0,
+    "z": 4.0
+  },
+  "cell_modes": 5,
+  "boundary": "pml",
+  "pml_layers": 16,
+  "core_step_nm": 2.5,
+  "mesh_parameter_applied": true,
+  "mesh_matching_valid": false,
+  "mesh_export": {
+    "status": "not_run"
+  },
+  "boundary_applied": "PML",
+  "status": "layout_only",
+  "complete": false,
+  "valid_s_parameters": false,
+  "ports": [
+    "EME::Ports::port_1",
+    "EME::Ports::port_2"
+  ],
+  "pml_layers_requested": 16,
+  "pml_layers_actual": 16,
+  "boundary_requested": "pml",
+  "native_layout_saved": false,
+  "native_layout_reason": "core mesh makes .lms very large; raw JSON kept"
+}

@@ -1,0 +1,48 @@
+Checked out feature at start: 'eme_engine'
+Checked out HPC license feature: 'eme_engine'
+Checked in feature: 'HPC_PARALLEL'
+Ansys Lumerical 2025 R2 Eigenmode Expansion Solver Version 7.26.4175 (Windows 64bit)
+ expires (month/day/year): 12/31/2035
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 1055@localhost
+current time: 周一 11月 16 15:43:44 2026
+Running on host: DESKTOP-NDH842O
+All processes are communicating and ready to proceed to simulation...
+Detected 4 processes on 1 host
+This process is the local leader
+Running lms file: D:\Program Files\Ansys Inc\v252\Lumerical\bin\eme-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFeU9BbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ205eWEzZEJiM1F4WjFrd1pXWkVSR05aYlZGVGFWcHpNREpyY0ZKTVpqWktOR2Q0VjNKTFgwRlBOVEF5ZURCMFVGcG5jbDlZTjNOcll5MVFVM0pIUkV0eVNWVTRXWHBWY0docldIUjFjMUY1ZG1SUFZIa3dkVzVhZWpobVNsOHdOSFJxWWtveVIycDZXWHBXZVZoWlZsSkpTQzFLTjE5UWNsZHRRM0UyZWpoSFR6VmlRaTFhZWxGRVNsazRjRVZGYjBkeWR6ZDBWVnA2Y0RSck1WbFZjRTFTV0RWWFZqRnZNRVpDYVdkU2VtVnVkVmc1TjBWbVUwcDFZbXN0ZURkbkxWcG1RbFZmZEVwR05sTm5kbGhXYzBreFUwZGxiWEp4YzE5T1QxQk9TWFV5TlZsUE4yOTNkRU5YWlZCQ2JYcHVNRzlCWHpSbGExQlpWMFJIYWxCbFlYRnJibm80WW5wRWVsWnBUbEkyYkdVMlZsWnhlbmhOTTFoeVIwOTJOalphZG1JMGNXOU5lV1ZmY25aUlFtWnpZMlZrVmtKSFJXZHFPVUkwY0hneFNGOHhTRGh4V1UxM2JFSmFOME0yV0hBMmFUSlpkMHhTTkVGMFNUQk1RME42VUhNS1BDOU5VMGMtQ2c8L0RBVEE+PC9BTlNZU19MSUNFTlNJTkdfQ09OVEVYVF9EQVRBPgpBTlNZU19MSUNFTlNJTkdfV09SS0ZMT1dfU0VTU0lPTj08REFUQT48SUQ+REVTS1RPUC1OREg4NDJPX2hmZF8yNTI8L0lEPjwvREFUQT4K C:/Users/hfd/Documents/deepseek-harness/default-workspace/optical-computing-git/progress/07_lumerical/round5/eme_matched_2p5/eme_L10.2um.lms
+Sharing project file with 3 peer processes on this host
+All processes are communicating and ready to proceed to simulation...
+Running MODE Simulation
+Starting simulation
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.046875 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time
+All processes are communicating and ready to proceed to simulation...
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 572 x 400
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.031250 seconds of CPU time

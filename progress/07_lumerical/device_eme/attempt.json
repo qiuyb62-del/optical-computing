@@ -1,0 +1,35 @@
+{
+  "stage": "device_eme_attempt",
+  "status": "not_completed",
+  "date": "2026-11-12",
+  "solver": "MODE EME, 3D: X Prop",
+  "geometry": {
+    "si_width_y_um": 0.5,
+    "si_thickness_z_um": 0.22,
+    "propagation_length_um": 10.0,
+    "domain_y_um": 4.0,
+    "domain_z_um": 3.0,
+    "cell_groups": 1,
+    "cells": 1,
+    "group_span_um": 10.0,
+    "pml_layers": 16,
+    "energy_conservation": "none"
+  },
+  "ports": {
+    "left": "fundamental mode, y/z span 2.5 um",
+    "right": "fundamental mode, y/z span 2.5 um"
+  },
+  "observations": {
+    "run_completed": true,
+    "user_s_matrix_shape": [4, 4],
+    "user_s_matrix_all_zero": true,
+    "user_s_matrix_noise_level": "approximately 1e-16 to 3e-14",
+    "port_mode_update": "updateportmodes(1) exceeded 600 s and was terminated",
+    "explicit_port_x_attempt": "ports at x=+/-5 um, use full simulation span=true, also exceeded 600 s",
+    "valid_s_parameters": false
+  },
+  "geometry_valid_for_strip": true,
+  "complete": false,
+  "used_in_main_circuit": false,
+  "reason": "Port modes were not successfully established/confirmed; the user S matrix was numerically zero, so no valid EME S-parameter was obtained."
+}
