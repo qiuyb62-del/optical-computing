@@ -43,26 +43,27 @@ h1 { font-size:25px; margin:0; letter-spacing:.01em; }
 #sourceBadge.live { background:#d93025; color:#fff; }
 #sourceBadge.cached { background:#e9eef2; color:#45525c; }
 #sourceBadge.digital { background:#e9eef2; color:#45525c; }
-main { max-width:1500px; margin:0 auto; padding:10px 22px 26px; display:grid; grid-template-columns:minmax(250px,1fr) minmax(430px,2fr) minmax(230px,.95fr); gap:16px; align-items:start; }
-.card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:15px; box-shadow:0 2px 10px #00000008; min-width:0; }
+main { max-width:1500px; margin:0 auto; padding:10px 22px 26px; display:grid; grid-template-columns:minmax(250px,1fr) minmax(430px,2fr) minmax(230px,.95fr); gap:16px; align-items:stretch; }
+.card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:15px; box-shadow:0 2px 10px #00000008; min-width:0; height:100%; }
+.classifyCard { display:flex; flex-direction:column; justify-content:center; }
 .card h2 { font-size:15px; margin:0 0 10px; color:#35424c; }
-canvas.pad { width:100%; max-width:300px; aspect-ratio:1; border:1px solid #b9c4cc; border-radius:10px; touch-action:none; cursor:crosshair; display:block; margin:0 auto; background:#fff; }
-.row { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+canvas.pad { width:100%; max-width:200px; aspect-ratio:1; border:1px solid #b9c4cc; border-radius:10px; touch-action:none; cursor:crosshair; display:block; margin:0 auto; background:#fff; }
+.row { display:flex; gap:8px; flex-wrap:wrap; margin-top:7px; align-items:center; }
 button { border:0; border-radius:8px; padding:9px 12px; font-size:13px; cursor:pointer; background:#e9eef2; color:#23313c; }
 button.primary { background:var(--blue); color:#fff; }
 button:disabled { opacity:.55; cursor:wait; }
 label { font-size:12.5px; color:#35424c; display:flex; gap:6px; align-items:center; }
-#status { color:var(--muted); font-size:12.5px; margin-top:10px; min-height:20px; }
-#previewWrap { margin-top:12px; text-align:center; }
-#preview { width:120px; height:120px; image-rendering:pixelated; border:1px solid var(--line); border-radius:8px; background:#fff; }
+#status { color:var(--muted); font-size:12.5px; margin-top:7px; min-height:18px; }
+#previewWrap { margin-top:8px; text-align:center; }
+#preview { width:80px; height:80px; image-rendering:pixelated; border:1px solid var(--line); border-radius:8px; background:#fff; }
 .caption { color:var(--muted); font-size:11.5px; margin-top:4px; }
 #chart { width:100%; height:260px; display:block; border:1px solid #e4eaee; border-radius:10px; background:#fff; }
 .bottom { max-width:1500px; margin:0 auto; padding:0 22px 26px; display:grid; grid-template-columns:minmax(360px,1fr) minmax(420px,1.45fr); gap:16px; align-items:start; }
 .bottom[hidden] { display:none; }
-.topoCard { background:#102731; border-color:#102731; color:#eaf4f7; padding:14px; }
+.topoCard { background:#102731; border-color:#102731; color:#eaf4f7; padding:14px; display:flex; flex-direction:column; }
 .topoCard h2, .topoCard .caption { color:#d8e8ee; }
 .topoCard .caption { color:#9fb8c4; }
-#topoSvg { width:100%; height:auto; display:block; margin-top:6px; }
+#topoSvg { width:100%; height:auto; display:block; margin:auto 0; }
 #historyTopoSvg { width:100%; height:210px; display:block; background:#102731; border-radius:8px; margin:8px 0; }
 .mziCard svg { width:100%; height:auto; background:#fbfcfd; border:1px solid #e4eaee; border-radius:8px; margin-top:8px; }
 #mziInfo { margin-top:8px; font-size:12px; color:#45525c; }
@@ -85,7 +86,7 @@ summary { cursor:pointer; color:#35424c; font-size:13px; }
 pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-radius:8px; padding:9px; font:11.5px/1.5 Consolas,monospace; color:#3e4b55; }
 .historyWrap { max-width:1500px; margin:0 auto; padding:10px 22px 26px; }
 .historyTop { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
-.historyGrid { display:grid; grid-template-columns:minmax(240px,1fr) minmax(430px,2fr) minmax(230px,.95fr); gap:16px; }
+.historyGrid { display:grid; grid-template-columns:minmax(240px,1fr) minmax(430px,2fr) minmax(230px,.95fr); gap:16px; align-items:stretch; }
 #historyView[hidden], main[hidden] { display:none; }
 @media(max-width:1050px) { main, .historyGrid, .bottom { grid-template-columns:1fr; } header { align-items:flex-start; flex-direction:column; } canvas.pad { max-width:280px; } }
 </style>
@@ -125,7 +126,7 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
     <div class="topoNote">240 个 MZI · 16 个衰减器；中央结构固定，不随输入变化。绿色块连接相邻两条通道。</div>
   </section>
 
-  <section class="card">
+  <section class="card classifyCard">
     <h2>分类</h2>
     <div id="prediction" class="big">—</div>
     <div class="classHint">程序根据这 16 个输出完成分类</div>
@@ -175,7 +176,7 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
       <div id="historyError" class="caption"></div>
       <details><summary>查看历史运行细节</summary><div id="historyDetail" class="caption"></div></details>
     </section>
-    <section class="card">
+    <section class="card classifyCard">
       <h2>当时的分类</h2>
       <div id="historyPrediction" class="big">—</div>
       <div class="predGrid">
