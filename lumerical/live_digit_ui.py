@@ -121,7 +121,7 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
   <section class="card topoCard">
     <h2>光路矩阵层</h2>
     <div class="caption">输入混合 V† → 幅度缩放 Σ → 输出混合 U</div>
-    <svg id="topoSvg" viewBox="0 0 1100 360" role="img" aria-label="固定 16 通道光路拓扑"></svg>
+    <svg id="topoSvg" viewBox="0 0 1000 300" role="img" aria-label="固定 16 通道光路拓扑"></svg>
     <div class="topoNote">240 个 MZI · 16 个衰减器；中央结构固定，不随输入变化。绿色块连接相邻两条通道。</div>
   </section>
 
@@ -169,7 +169,7 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
     <section class="card">
       <h2>当时的光路与 16 路对照</h2>
       <div id="historySource" class="caption"></div>
-      <svg id="historyTopoSvg" viewBox="0 0 1100 360" aria-label="历史回放的固定光路拓扑"></svg>
+      <svg id="historyTopoSvg" viewBox="0 0 1000 300" aria-label="历史回放的固定光路拓扑"></svg>
       <div class="legend"><span class="sw" style="background:var(--blue)"></span>当时的软件计算 <span class="sw" style="background:var(--orange);margin-left:12px"></span>当时的电路仿真</div>
       <canvas id="historyChart" width="640" height="300" style="width:100%;height:300px;border:1px solid #e4eaee;border-radius:10px"></canvas>
       <div id="historyError" class="caption"></div>
@@ -226,27 +226,27 @@ function placeMesh(ops, left, right){
 }
 function renderTopology(id, topo, interactive){
   const svg=document.getElementById(id); svg.innerHTML='';
-  const left=286,right=625,left2=730,right2=1069;
-  svgEl('text',{x:left,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='输入混合 V†';
-  svgEl('text',{x:625,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='幅度缩放 Σ';
-  svgEl('text',{x:880,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='输出混合 U';
-  for(let i=0;i<16;i++){ const y=160+12*i; svgEl('line',{x1:270,y1:y,x2:1100,y2:y,stroke:'#496875','stroke-width':1.2},svg); }
+  const left=90,right=410,left2=540,right2=860, att=475;
+  svgEl('text',{x:(left+right)/2,y:26,fill:'#d8e8ee','font-size':15,'text-anchor':'middle'},svg).textContent='输入混合 V†';
+  svgEl('text',{x:att,y:26,fill:'#d8e8ee','font-size':15,'text-anchor':'middle'},svg).textContent='幅度缩放 Σ';
+  svgEl('text',{x:(left2+right2)/2,y:26,fill:'#d8e8ee','font-size':15,'text-anchor':'middle'},svg).textContent='输出混合 U';
+  for(let i=0;i<16;i++){ const y=70+12*i; svgEl('line',{x1:55,y1:y,x2:960,y2:y,stroke:'#496875','stroke-width':1.2},svg); }
   const gates=placeMesh(topo.input_mesh.ops,left,right).concat(placeMesh(topo.output_mesh.ops,left2,right2));
   for(const g of gates){
     const r=svgEl('rect',{x:g.x-4,y:g.y-2,width:8,height:16,rx:2,fill:'#39c6b8',style:'cursor:pointer'},svg);
     const tip=svgEl('title',{},r);
-    tip.textContent=`${g.x<700?'输入':'输出'}网格 MZI：通道 ${g.m+1}/${g.m+2}，θ=${Number(g.theta).toFixed(4)}，φ=${Number(g.phi).toFixed(4)} rad`;
+    tip.textContent=`${g.x<att?'输入':'输出'}网格 MZI：通道 ${g.m+1}/${g.m+2}，θ=${Number(g.theta).toFixed(4)}，φ=${Number(g.phi).toFixed(4)} rad`;
     if(interactive) r.addEventListener('click',()=>{ selectedGate=g; renderMzi(g); });
   }
   for(let i=0;i<topo.amplitude_transmissions.length;i++){
-    const y=160+12*i;
-    const a=svgEl('rect',{x:678,y:y-4,width:20,height:8,rx:2,fill:'#e0a42a'},svg);
+    const y=70+12*i;
+    const a=svgEl('rect',{x:att-10,y:y-4,width:20,height:8,rx:2,fill:'#e0a42a'},svg);
     const tip=svgEl('title',{},a); tip.textContent=`通道 ${i+1} 幅度透过率 ${Number(topo.amplitude_transmissions[i]).toFixed(5)}`;
   }
   for(let i=0;i<16;i++){
-    const y=160+12*i;
-    const c1=svgEl('circle',{cx:645,cy:y,r:2.2,fill:'#9fd8e6'},svg);
-    const c2=svgEl('circle',{cx:1083,cy:y,r:2.2,fill:'#9fd8e6'},svg);
+    const y=70+12*i;
+    const c1=svgEl('circle',{cx:430,cy:y,r:2.2,fill:'#9fd8e6'},svg);
+    const c2=svgEl('circle',{cx:890,cy:y,r:2.2,fill:'#9fd8e6'},svg);
     const t1=svgEl('title',{},c1); t1.textContent=`输入网格输出相位 ${Number(topo.input_mesh.output_phases[i]).toFixed(4)} rad`;
     const t2=svgEl('title',{},c2); t2.textContent=`输出网格输出相位 ${Number(topo.output_mesh.output_phases[i]).toFixed(4)} rad`;
   }
@@ -359,10 +359,10 @@ fetch('/api/topology').then(r=>r.json()).then(topo=>{
   topology=topo;
   renderTopology('topoSvg',topo,true);
   renderTopology('historyTopoSvg',topo,false);
-  selectedGate=placeMesh(topo.input_mesh.ops,286,625)[0];
+  selectedGate=placeMesh(topo.input_mesh.ops,90,410)[0];
   renderMzi(selectedGate);
 });
-document.getElementById('expandMzi').onclick=()=>{ if(topology){ selectedGate=placeMesh(topology.input_mesh.ops,286,625)[0]; renderMzi(selectedGate); document.getElementById('mziSvg').scrollIntoView({behavior:'smooth',block:'nearest'}); } };
+document.getElementById('expandMzi').onclick=()=>{ if(topology){ selectedGate=placeMesh(topology.input_mesh.ops,90,410)[0]; renderMzi(selectedGate); document.getElementById('mziSvg').scrollIntoView({behavior:'smooth',block:'nearest'}); } };
 function drawAutoDigit(){
   white(); hasInk=true; ctx.strokeStyle='#111'; ctx.lineWidth=20; ctx.lineCap='round';
   ctx.beginPath(); ctx.moveTo(150,55); ctx.lineTo(150,245); ctx.stroke();
