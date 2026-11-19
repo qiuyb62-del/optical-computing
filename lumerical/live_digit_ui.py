@@ -223,7 +223,7 @@ function placeMesh(ops, left, right){
     return {m,theta,phi,column};
   });
   const columns=1+Math.max(...last);
-  return gates.map(g=>({...g,x:left+(g.column+.5)*(right-left)/columns,y:160+12*g.m}));
+  return gates.map(g=>({...g,x:left+(g.column+.5)*(right-left)/columns,y:70+12*g.m}));
 }
 function renderTopology(id, topo, interactive){
   const svg=document.getElementById(id); svg.innerHTML='';
