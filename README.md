@@ -92,7 +92,7 @@ circuit_size = 16 / mzi_count = 240
 - 缓存 H 演示（标记 `cached_H_demo`，不调用求解器）；
 - 仅数字（不调用求解器）。
 
-界面另有光路证据面板：LIVE/CACHED/DIGITAL 徽标、16 通道/240 MZI、build/run 耗时、`g/s`、16 路原始复输出、编码幅度/相位、数字 vs 光路逐通道条形图、session 下载。LIVE 只在 `live_interconnect_called=true` 时显示。
+界面按输入 / 16 路矩阵对照 / 分类三列布局，默认缓存矩阵；顶部来源标签来自已返回结果。另有“查看已保存的仿真”历史回放（记录 `session_5a8b4f9112`，明确约 97 秒属于历史运行）。光路证据面板显示 LIVE/CACHED/DIGITAL、16 通道/240 MZI、build/run 耗时、`g/s`、16 路原始复输出、编码幅度/相位和 session 下载。LIVE 只在 `live_interconnect_called=true` 时显示。
 
 边界：这是最小单张闭环；不是任意手写图片精度保证，也没有逐张跑 10,000 张瞬态。现场 live 首张约 97–124 秒（本机实测），每次重建 16 通道电路。详见 [第八阶段记录](progress/08_live_digit/README.md)。
 
