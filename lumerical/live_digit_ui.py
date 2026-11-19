@@ -24,6 +24,7 @@ if str(ROOT) not in sys.path:
 from lumerical.live_digit import DEFAULT_OUT, recognize_pixels  # noqa: E402
 
 HISTORY_RECORD = ROOT / "progress/07_lumerical/live_digit_proof/session_5a8b4f9112.json"
+TOPOLOGY_RECORD = ROOT / "progress/08_live_digit/model-topology.json"
 
 HTML = r"""<!doctype html>
 <html lang="zh">
@@ -55,7 +56,17 @@ label { font-size:12.5px; color:#35424c; display:flex; gap:6px; align-items:cent
 #previewWrap { margin-top:12px; text-align:center; }
 #preview { width:120px; height:120px; image-rendering:pixelated; border:1px solid var(--line); border-radius:8px; background:#fff; }
 .caption { color:var(--muted); font-size:11.5px; margin-top:4px; }
-#chart { width:100%; height:300px; display:block; border:1px solid #e4eaee; border-radius:10px; background:#fff; }
+#chart { width:100%; height:260px; display:block; border:1px solid #e4eaee; border-radius:10px; background:#fff; }
+.bottom { max-width:1500px; margin:0 auto; padding:0 22px 26px; display:grid; grid-template-columns:minmax(360px,1fr) minmax(420px,1.45fr); gap:16px; align-items:start; }
+.bottom[hidden] { display:none; }
+.topoCard { background:#102731; border-color:#102731; color:#eaf4f7; padding:14px; }
+.topoCard h2, .topoCard .caption { color:#d8e8ee; }
+.topoCard .caption { color:#9fb8c4; }
+#topoSvg { width:100%; height:auto; display:block; margin-top:6px; }
+#historyTopoSvg { width:100%; height:210px; display:block; background:#102731; border-radius:8px; margin:8px 0; }
+.mziCard svg { width:100%; height:auto; background:#fbfcfd; border:1px solid #e4eaee; border-radius:8px; margin-top:8px; }
+#mziInfo { margin-top:8px; font-size:12px; color:#45525c; }
+.topoNote { font-size:11.5px; color:#9fb8c4; margin-top:8px; }
 .matrixHead { display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
 #sourceLabel { font-size:12.5px; color:var(--muted); }
 #matrixError { margin:8px 0 0; font-size:13px; font-weight:700; }
@@ -76,7 +87,7 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
 .historyTop { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
 .historyGrid { display:grid; grid-template-columns:minmax(240px,1fr) minmax(430px,2fr) minmax(230px,.95fr); gap:16px; }
 #historyView[hidden], main[hidden] { display:none; }
-@media(max-width:1050px) { main, .historyGrid { grid-template-columns:1fr; } header { align-items:flex-start; flex-direction:column; } canvas.pad { max-width:280px; } }
+@media(max-width:1050px) { main, .historyGrid, .bottom { grid-template-columns:1fr; } header { align-items:flex-start; flex-direction:column; } canvas.pad { max-width:280px; } }
 </style>
 </head>
 <body>
@@ -98,8 +109,8 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
       <input id="file" type="file" accept="image/*" hidden>
     </div>
     <div class="row" id="modes">
-      <label><input type="radio" name="mode" value="cached" checked> 使用已保存光路矩阵</label>
-      <label><input type="radio" name="mode" value="live"> 本次运行 Lumerical</label>
+      <label><input type="radio" name="mode" value="cached"> 使用已保存光路矩阵</label>
+      <label><input type="radio" name="mode" value="live" checked> 本次运行 Lumerical</label>
       <label><input type="radio" name="mode" value="digital"> 仅软件计算</label>
     </div>
     <div class="row"><button id="run" class="primary">识别</button><button id="historyBtn">查看已保存的仿真</button></div>
@@ -107,12 +118,11 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
     <div id="previewWrap"><div class="caption">模型实际输入 28×28</div><canvas id="preview" width="140" height="140"></canvas></div>
   </section>
 
-  <section class="card">
-    <h2>16 路线性输出</h2>
-    <div class="matrixHead"><span id="sourceLabel">等待识别</span><span class="caption">同一刻度 / 保留正负号 / 零线</span></div>
-    <div class="legend"><span class="sw" style="background:var(--blue)"></span>软件直接计算 <span class="sw" style="background:var(--orange);margin-left:12px"></span>光路（缓存或本次仿真）</div>
-    <canvas id="chart" width="640" height="300"></canvas>
-    <div id="matrixError" class="none">16 路矩阵计算相对误差：—</div>
+  <section class="card topoCard">
+    <h2>光路矩阵层</h2>
+    <div class="caption">输入混合 V† → 幅度缩放 Σ → 输出混合 U</div>
+    <svg id="topoSvg" viewBox="0 0 1100 360" role="img" aria-label="固定 16 通道光路拓扑"></svg>
+    <div class="topoNote">240 个 MZI · 16 个衰减器；中央结构固定，不随输入变化。绿色块连接相邻两条通道。</div>
   </section>
 
   <section class="card">
@@ -128,6 +138,22 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
   </section>
 </main>
 
+<section class="bottom" id="liveBottom">
+  <section class="card mziCard">
+    <h2>放大一个 MZI</h2>
+    <div class="row" style="margin-top:0"><button id="expandMzi">展开第一个 MZI</button><span class="caption">或点击中央绿色块切换</span></div>
+    <svg id="mziSvg" viewBox="0 0 520 160" role="img" aria-label="单个 MZI 放大图"></svg>
+    <div id="mziInfo">尚未选择 MZI。</div>
+  </section>
+  <section class="card">
+    <h2>16 路线性输出</h2>
+    <div class="matrixHead"><span id="sourceLabel">等待识别</span><span class="caption">同一刻度 / 保留正负号 / 零线</span></div>
+    <div class="legend"><span class="sw" style="background:var(--blue)"></span>软件直接计算 <span class="sw" style="background:var(--orange);margin-left:12px"></span>光路（缓存或本次仿真）</div>
+    <canvas id="chart" width="640" height="260"></canvas>
+    <div id="matrixError" class="none">16 路矩阵计算相对误差：—</div>
+  </section>
+</section>
+
 <section id="historyView" class="historyWrap" hidden>
   <div class="historyTop">
     <button id="back">返回画板</button>
@@ -141,8 +167,9 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
       <div class="caption" style="margin-top:8px">记录中的 28×28 输入；不是本次画板。</div>
     </section>
     <section class="card">
-      <h2>当时的 16 路对照</h2>
+      <h2>当时的光路与 16 路对照</h2>
       <div id="historySource" class="caption"></div>
+      <svg id="historyTopoSvg" viewBox="0 0 1100 360" aria-label="历史回放的固定光路拓扑"></svg>
       <div class="legend"><span class="sw" style="background:var(--blue)"></span>当时的软件计算 <span class="sw" style="background:var(--orange);margin-left:12px"></span>当时的电路仿真</div>
       <canvas id="historyChart" width="640" height="300" style="width:100%;height:300px;border:1px solid #e4eaee;border-radius:10px"></canvas>
       <div id="historyError" class="caption"></div>
@@ -164,7 +191,8 @@ pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9fa; border-r
 <script>
 const sourceBadge=document.getElementById('sourceBadge'), statusEl=document.getElementById('status'), detailsMain=document.getElementById('detailMain');
 const pad=document.getElementById('pad'), ctx=pad.getContext('2d'), preview=document.getElementById('preview'), pctx=preview.getContext('2d');
-let drawing=false, hasInk=false, requestSeq=0, busy=false, lastResult=null, waitTimer=null;
+let drawing=false, hasInk=false, requestSeq=0, busy=false, lastResult=null, waitTimer=null, modeTouched=false;
+document.querySelectorAll('input[name="mode"]').forEach(el=>el.addEventListener('change',()=>{modeTouched=true;}));
 
 function white(){ ctx.fillStyle='#fff'; ctx.fillRect(0,0,300,300); ctx.strokeStyle='#111'; ctx.lineWidth=19; ctx.lineCap='round'; ctx.lineJoin='round'; }
 white();
@@ -182,6 +210,65 @@ function clearResult(){
   const p=pctx; p.clearRect(0,0,140,140); p.fillStyle='#fff'; p.fillRect(0,0,140,140);
 }
 function invalidate(){ requestSeq++; lastResult=null; clearResult(); statusEl.textContent='等待识别。'; }
+
+const SVGNS='http://www.w3.org/2000/svg';
+let topology=null, selectedGate=null;
+function svgEl(tag, attrs, parent){ const e=document.createElementNS(SVGNS,tag); for(const [k,v] of Object.entries(attrs||{})) e.setAttribute(k,String(v)); parent.appendChild(e); return e; }
+function placeMesh(ops, left, right){
+  const last=Array(16).fill(-1);
+  const gates=ops.map(([m,theta,phi])=>{
+    if(!Number.isInteger(m)||m<0||m>=15) throw new Error('MZI 通道编号越界');
+    const column=1+Math.max(last[m],last[m+1]); last[m]=last[m+1]=column;
+    return {m,theta,phi,column};
+  });
+  const columns=1+Math.max(...last);
+  return gates.map(g=>({...g,x:left+(g.column+.5)*(right-left)/columns,y:160+12*g.m}));
+}
+function renderTopology(id, topo, interactive){
+  const svg=document.getElementById(id); svg.innerHTML='';
+  const left=286,right=625,left2=730,right2=1069;
+  svgEl('text',{x:left,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='输入混合 V†';
+  svgEl('text',{x:625,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='幅度缩放 Σ';
+  svgEl('text',{x:880,y:26,fill:'#d8e8ee','font-size':16},svg).textContent='输出混合 U';
+  for(let i=0;i<16;i++){ const y=160+12*i; svgEl('line',{x1:270,y1:y,x2:1100,y2:y,stroke:'#496875','stroke-width':1.2},svg); }
+  const gates=placeMesh(topo.input_mesh.ops,left,right).concat(placeMesh(topo.output_mesh.ops,left2,right2));
+  for(const g of gates){
+    const r=svgEl('rect',{x:g.x-4,y:g.y-2,width:8,height:16,rx:2,fill:'#39c6b8',style:'cursor:pointer'},svg);
+    const tip=svgEl('title',{},r);
+    tip.textContent=`${g.x<700?'输入':'输出'}网格 MZI：通道 ${g.m+1}/${g.m+2}，θ=${Number(g.theta).toFixed(4)}，φ=${Number(g.phi).toFixed(4)} rad`;
+    if(interactive) r.addEventListener('click',()=>{ selectedGate=g; renderMzi(g); });
+  }
+  for(let i=0;i<topo.amplitude_transmissions.length;i++){
+    const y=160+12*i;
+    const a=svgEl('rect',{x:678,y:y-4,width:20,height:8,rx:2,fill:'#e0a42a'},svg);
+    const tip=svgEl('title',{},a); tip.textContent=`通道 ${i+1} 幅度透过率 ${Number(topo.amplitude_transmissions[i]).toFixed(5)}`;
+  }
+  for(let i=0;i<16;i++){
+    const y=160+12*i;
+    const c1=svgEl('circle',{cx:645,cy:y,r:2.2,fill:'#9fd8e6'},svg);
+    const c2=svgEl('circle',{cx:1083,cy:y,r:2.2,fill:'#9fd8e6'},svg);
+    const t1=svgEl('title',{},c1); t1.textContent=`输入网格输出相位 ${Number(topo.input_mesh.output_phases[i]).toFixed(4)} rad`;
+    const t2=svgEl('title',{},c2); t2.textContent=`输出网格输出相位 ${Number(topo.output_mesh.output_phases[i]).toFixed(4)} rad`;
+  }
+}
+function renderMzi(g){
+  if(!g)return;
+  const svg=document.getElementById('mziSvg'); svg.innerHTML='';
+  svgEl('line',{x1:10,y1:55,x2:510,y2:55,stroke:'#2c697a','stroke-width':2},svg);
+  svgEl('line',{x1:10,y1:105,x2:510,y2:105,stroke:'#2c697a','stroke-width':2},svg);
+  for(const x of [125,355]){
+    svgEl('rect',{x:x-9,y:40,width:18,height:80,rx:4,fill:'#d9f1ef',stroke:'#2c9b92','stroke-width':2},svg);
+    svgEl('line',{x1:x-9,y1:40,x2:x+9,y2:120,stroke:'#2c9b92','stroke-width':2},svg);
+    svgEl('line',{x1:x+9,y1:40,x2:x-9,y2:120,stroke:'#2c9b92','stroke-width':2},svg);
+  }
+  svgEl('text',{x:125,y:145,fill:'#45525c','font-size':11,'text-anchor':'middle'},svg).textContent='分光';
+  svgEl('text',{x:355,y:145,fill:'#45525c','font-size':11,'text-anchor':'middle'},svg).textContent='合束干涉';
+  for(const [x,y,label,val] of [[60,44,'φ',g.phi],[240,44,'2θ',2*g.theta],[445,34,'−θ',-g.theta]]){
+    svgEl('rect',{x:x-8,y:y-4,width:16,height:8,rx:3,fill:'#e0a42a'},svg);
+    svgEl('text',{x:x,y:y-9,fill:'#9a5b00','font-size':11,'text-anchor':'middle'},svg).textContent=`${label}=${Number(val).toFixed(3)}`;
+  }
+  document.getElementById('mziInfo').textContent=`通道 ${g.m+1}/${g.m+2} · θ=${Number(g.theta).toFixed(4)} rad · φ=${Number(g.phi).toFixed(4)} rad`;
+}
 function pos(e){ const r=pad.getBoundingClientRect(); return {x:(e.clientX-r.left)*300/r.width, y:(e.clientY-r.top)*300/r.height}; }
 pad.addEventListener('pointerdown', e=>{ drawing=true; hasInk=true; invalidate(); pad.setPointerCapture(e.pointerId); const p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); });
 pad.addEventListener('pointermove', e=>{ if(!drawing)return; const p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); });
@@ -252,7 +339,8 @@ document.getElementById('run').onclick=async()=>{
 document.getElementById('historyBtn').onclick=async()=>{
   try{
     const res=await fetch('/api/history'); const data=await res.json(); if(!res.ok||data.error) throw new Error(data.error||('HTTP '+res.status));
-    document.getElementById('liveView').hidden=true; document.getElementById('historyView').hidden=false;
+    document.getElementById('liveView').hidden=true; document.getElementById('liveBottom').hidden=true; document.getElementById('historyView').hidden=false;
+    sourceBadge.textContent='历史回放 · 已完成的 Lumerical 仿真'; sourceBadge.className='cached';
     document.getElementById('historyRecord').textContent='记录：'+(data.record_id||'未记录');
     document.getElementById('historySource').textContent='历史回放 · 已完成的 Lumerical 仿真（约 '+(data.elapsed_seconds?Number(data.elapsed_seconds).toFixed(1):'未记录')+' s）';
     drawImage28('historyImage',data.image_28,1);
@@ -266,9 +354,26 @@ document.getElementById('historyBtn').onclick=async()=>{
     document.getElementById('historyDetail').innerHTML=detailHtml(data);
   }catch(err){ statusEl.textContent='历史记录读取失败：'+err.message; }
 };
-document.getElementById('back').onclick=()=>{ document.getElementById('historyView').hidden=true; document.getElementById('liveView').hidden=false; };
+document.getElementById('back').onclick=()=>{ document.getElementById('historyView').hidden=true; document.getElementById('liveView').hidden=false; document.getElementById('liveBottom').hidden=false; if(lastResult) renderMain(lastResult); else clearResult(); };
+fetch('/api/topology').then(r=>r.json()).then(topo=>{
+  topology=topo;
+  renderTopology('topoSvg',topo,true);
+  renderTopology('historyTopoSvg',topo,false);
+  selectedGate=placeMesh(topo.input_mesh.ops,286,625)[0];
+  renderMzi(selectedGate);
+});
+document.getElementById('expandMzi').onclick=()=>{ if(topology){ selectedGate=placeMesh(topology.input_mesh.ops,286,625)[0]; renderMzi(selectedGate); document.getElementById('mziSvg').scrollIntoView({behavior:'smooth',block:'nearest'}); } };
+function drawAutoDigit(){
+  white(); hasInk=true; ctx.strokeStyle='#111'; ctx.lineWidth=20; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(150,55); ctx.lineTo(150,245); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(110,245); ctx.lineTo(190,245); ctx.stroke();
+  clearResult();
+}
+const auto=new URLSearchParams(location.search).get('auto');
+if(auto==='history') setTimeout(()=>document.getElementById('historyBtn').click(),250);
+if(auto==='cached') setTimeout(()=>{ drawAutoDigit(); modeTouched=true; const r=document.querySelector('input[name="mode"][value="cached"]'); if(r)r.checked=true; document.getElementById('run').click(); },250);
 fetch('/health').then(r=>r.json()).then(d=>{
-  if(d.default_mode){ const el=document.querySelector(`input[name="mode"][value="${d.default_mode}"]`); if(el) el.checked=true; }
+  if(d.default_mode && !modeTouched && !auto){ const el=document.querySelector(`input[name="mode"][value="${d.default_mode}"]`); if(el) el.checked=true; }
   if(d.digital_only){ document.querySelectorAll('input[name="mode"]').forEach(el=>{el.disabled=true; if(el.value==='digital')el.checked=true;}); statusEl.textContent='服务以 --digital-only 启动：只能做软件基线。'; }
 });
 </script>
@@ -300,18 +405,24 @@ def make_handler(args, lock):
             self.wfile.write(body)
 
         def do_GET(self):
-            if self.path in ("/", "/index.html"):
+            route = urlparse(self.path).path
+            if route in ("/", "/index.html"):
                 self._send(200, HTML.encode("utf-8"), "text/html")
-            elif self.path == "/health":
+            elif route == "/health":
                 self._send(200, {"ok": True, "digital_only": args.digital_only,
                                  "default_mode": ("digital" if args.digital_only
                                                   else args.default_mode)})
-            elif self.path == "/api/history":
+            elif route == "/api/history":
                 try:
                     self._send(200, _history_payload())
                 except Exception as exc:
                     self._send(404, {"error": str(exc)})
-            elif self.path.startswith("/api/session"):
+            elif route == "/api/topology":
+                try:
+                    self._send(200, json.loads(TOPOLOGY_RECORD.read_text(encoding="utf-8")))
+                except Exception as exc:
+                    self._send(404, {"error": str(exc)})
+            elif route.startswith("/api/session"):
                 query = parse_qs(urlparse(self.path).query)
                 try:
                     if query.get("record", [""])[0] == "history":
@@ -366,7 +477,7 @@ def main():
     parser.add_argument("--seed", type=int, default=20261109)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--default-mode", choices=["cached", "live", "digital"],
-                        default="cached")
+                        default="live")
     parser.add_argument("--digital-only", action="store_true",
                         help="disable INTERCONNECT; label results as digital only")
     parser.add_argument("--no-browser", action="store_true")
